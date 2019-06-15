@@ -52,7 +52,7 @@ Any $\str{A}\in\flo$ must satisfy the following properties
   (y,x)\notin\rel[<]{A}$
 \end{itemize}
 
-\begin{definition}[Homomorphisms and Substructures\cite{Hubicka2016,Hubicka2015}]
+\begin{definition}[Homomorphisms and Substructures\cite{Hubicka2015,Hubicka2016}]
   \textit{Homomorphisms} between structures over the same language are maps that
   preserve relations,\\
   so $f : \str{A} \to \str{B}$ such that $\forall i \in I, f(\rel[i]{A})\subseteq
@@ -340,8 +340,8 @@ $p\in(0,1)$ and the proof would be identical.
 \end{prop}
 
 With the above two propositions, we have shown that there exists a countable
-structure that satisfies the \hyperlink{rem:extprop}{EP} and that it is unique up to
-isomorphism.
+structure that satisfies the \hyperlink{rem:extprop}{EP} and that it is unique
+up to isomorphism.
 We shall call this structure the random graph, $\rand$.
 
 From the proof of \autoref{prop:EPIso}, it can be deduced that if we have two
@@ -353,8 +353,8 @@ The final property we will show about the random graph is that it is the Fraïss
 limit of the class of undirected finite graphs without loops, $\gra$.
 
 We define $\gra$ as follows.
-$\str{A}\in\gra$ is a finite structure over the language $(1,(2))$ satisfying the
-following properties.
+$\str{A}\in\gra$ is a finite structure over the language $(\{1\},(2))$
+satisfying the following properties.
 \begin{itemize}
 \item\textbf{Irreflexive}: $\forall x \in A, \neg((x,x)\in\rel{A})$
 \item\textbf{Symmetric}: $\forall x, y\in A, (x,y)\in\rel{A} \implies (y,x)\in\rel{A}$
@@ -389,8 +389,7 @@ following properties.
     After which we will have found a substructure of $\rand$ which is isomorphic
     to $\str{A}$ implying that $\gra\subseteq\age\rand$.
 
-    Thus $\gra=\age\rand$
-
+    Thus $\gra=\age\rand$.
   \end{proof}
 \end{prop}
 
@@ -425,6 +424,19 @@ the class of finite complete graphs has $K_2$-Ramsey property.
 In fact, a direct corollary of the finite Ramsey theorem from the original paper
 \cite[267]{Ramsey1930} is that the class of finite complete graphs is a Ramsey
 class.
+
+One might hope that this property could be extended to $\gra$, but this is not
+the case as given by the result below
+\begin{theorem}[Ramsey property in $\gra$\cite{Nesetril1995}]
+  $\gra$ has the $\str{A}$-Ramsey property $\iff$ $\str{A}$ is either a complete
+  graph or the complement of a complete graph.
+\end{theorem}
+This is a non-trivial result whose proof goes beyond the scope of this project,
+but we refer the reader to \cite[1375-1377]{Nesetril1995} for a rigorous argument.
+With this we find that the only classes of finite unordered graphs that are
+Ramsey are the complete graphs or empty graphs.
+
+We can recover the Ramsey property by considering instead ordered graphs.
 
 \textit{yet to write}
 \begin{itemize}
