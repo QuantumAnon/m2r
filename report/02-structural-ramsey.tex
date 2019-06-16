@@ -487,25 +487,47 @@ We start with an auxiliary remark
     result, we can ensure the following $\str{A'}\in\sstr{C}{A} \iff \forall i =
     1, \dots, N; \pi_i(\str{A'})\in\sstr{B}{A}$.
 
-    We then write $\sstr{B}{A}$ as $\{\str{A}_1,\dots,\str{A}_r\}$ and
+    We then write $\sstr{B}{A}$ as $\{\str{A}_1,\dots,\str{A}_r\}$ or
     $R=\{1,\dots,r\}$.
     Thus $\sstr{C}{A}$ is in bijection with $R^N$.
 
     Using the Hales-Jewett theorem, for any $t\in\Z^+$, we can find a $N\in\Z^+$
     such that any $t$-colouring of $R^N$ will contain a monochromatic line.
-    By our construction
+    By our construction this monochrome line gives us a monochrome line of
+    $\str{A}_i$ all of which are substructures of $\str{B}$ which completes the proof.
   \end{proof}
 \end{theorem}
 
-\textit{yet to write}
-\begin{itemize}
-\item Mention Ramsey + JEP => AP
-\item Automorphisms of the random graph (Cameron2013; Cameron1990)
-\item Define Strong Amalgamation Property and Extreme Amenability 
-\item Theorems 4.7/8 from Kechris2005 
-\item Conclusion, apply Ramsey Class property to random graph (nice result
-  about groups and colouring)
-\end{itemize}
+As shown by~\citeauthor{Kechris2005}, being a Ramsey class is a very strong
+property that yields several results about the Fraïssé limit of the class and
+its automorphism group.
+One of the strongest results is that $\aut\orand$ is extremely amenable.
+
+\begin{definition}[$G$-flows and Extreme Amenability\cite{Kechris2005}]
+  Let $G$ be a topological group and consider it acting on a compact Hausdorff
+  topological space $X$, we call this action a $G$-flow on $X$.
+  If the flow admits no proper subgroups, i.e. every orbit on $X$ is dense in
+  $X$, we call the flow \textit{minimal}.
+  It can be shown that every topological group has a minimal flow, furthermore,
+  there exists a largest minimal flow which surjects onto any other, we call
+  this the \textit{universal} minimal flow of $G$.
+  
+  If the universal minimal flow is a single point, we say $G$ is \textit{extremely amenable}.
+\end{definition}
+
+The following result makes precise the correspondence between Ramsey classes and
+certain extremely amenable topological groups.
+
+\begin{theorem}[\citeauthor{Kechris2005}~\cite{Kechris2005}]
+  Let $\class{K}$ be a Fraïssé class and $\str{K}$ its limit.
+  Then the following are equivalent:
+  \begin{itemize}
+  \item $\class{K}$ is Ramsey.
+  \item $\aut\str{K}$ is extremely amenable.
+  \end{itemize}
+\end{theorem}
+
+This is a particularly interesting 
 
 % LocalWords:  Ramsey subgraphs subgraph Fraïssé surjective Hausdorff
 
