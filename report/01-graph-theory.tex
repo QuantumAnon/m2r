@@ -197,21 +197,21 @@ I now return to example presented earlier:
 values of the following Ramsey numbers: $R(3,4)=9$, $R(3,5)=14$ and $R(4,4)=18$. 
 As of the date of writing, only small Ramsey numbers are actually known exactly. 
 $R(5,5)$ is unknown, although in 1995 McKay and Radziszowski proved that its 
-value must lie between 43 and 49 inclusive \cite{McKay1995}. Its value is unknown 
-the exact values of Ramsey numbers are often computed using algorithms, and very 
+value must lie between 43 and 49 inclusive \cite{McKay1995}. Its actual value is unknown,  
+and the exact values of Ramsey numbers are often computed using algorithms, and very 
 powerful computers. Using their bounds, even for a simple $2$-colouring, a 
 computer would have to check at least $2^{43}\approx 8.8$ trillion different colour 
 configurations of $K_5$.\\
 
 Greenwood and Gleason also showed that $R_3(3,3,3)=17$, i.e. every complete graph 
-order at least 17 has a monochromatic $K_3$, when coloured with 
+of order at least 17 has a monochromatic $K_3$, when coloured with 
 three colours. In fact, \autoref{prop:ram} holds for any finite $r$-colouring:
 
 \begin{theorem}[Ramsey's Theorem for $r$-colours] \label{thr:ram2}
 
-    Given $r$ positive integers $s_1, s_2,\ldots, s_r$, there exist a least
-    positive integer $R_r(s_1,\ldots,s_r)$ such that any r-colouring of $K_n$ with 
-    $n\geq R_r(s_1,\ldots,s_r)$, contains as a clique a monochromatic $K_{s_i}$,
+    Given $r$ positive integers, $s_1, s_2,\ldots, s_r$, there exist a least
+    positive integer, $R_r(s_1,\ldots,s_r)$, such that any r-colouring of $K_n$ with 
+    $n\geq R_r(s_1,\ldots,s_r)$ contains, as a clique, a monochromatic $K_{s_i}$
     for some $i\in\{1,\ldots r\}$, coloured by the $i^{\text{th}}$ colour.\label{thr:genRamsey}
 
 \end{theorem}
@@ -232,7 +232,7 @@ three colours. In fact, \autoref{prop:ram} holds for any finite $r$-colouring:
 
 \end{proof}
 
-Whilst we have been discussing Ramsey's theorem in a strictly graph-theoretic sense,
+Whilst we have been discussing Ramsey's theorem in a strictly graph-theoretical sense,
 the theory extends beyond that. If we are given a set $V$ (which we 
 have been referring to as the set of vertices of a given graph), so far we have been 
 looking at partitioning (colouring) the set $V^{(2)}$ (the edges) into $r$ classes. 
@@ -241,10 +241,10 @@ for any $k,r\in\Z^+$.
 
 \begin{theorem}[Ramsey's Theorem] \label{thr:hyper}
 
-    Given $r$ positive integers $s_1, s_2,\ldots, s_r$ such that $1<k<\text{min}{s_1\ldots s_r}$, there exist a least
-    positive integer $R_r^{(k)}(s_1,\ldots,s_r)$ such that any $r$-colouring of $[n]^{(k)}$ 
-    with $n\geq R_r^{(k)}(s_1,\ldots,s_r)$, contains as a clique a monochromatic 
-    $[s_i]^{(k)}$, for some $i\in\{1,\ldots ,r\}$, coloured by the $i^{\text{th}}$ colour.  \cite{Ramsey1930}
+    Given $r$ positive integers, $s_1, s_2,\ldots, s_r$, such that $1<k<\text\{min\}{s_1\ldots s_r}$, there exist a least
+    positive integer, $R_r^{(k)}(s_1,\ldots,s_r)$, such that any $r$-colouring of $[n]^{(k)}$ 
+    with $n\geq R_r^{(k)}(s_1,\ldots,s_r)$ contains, as a clique, a monochromatic 
+    $[s_i]^{(k)}$ for some $i\in\{1,\ldots ,r\}$, coloured by the $i^{\text{th}}$ colour.  \cite{Ramsey1930}
 
 \end{theorem}
 
@@ -276,8 +276,9 @@ $r$-colourings. That is, $R_r^{(k)}(s_1,\ldots,s_r)$ exists.
 \subsection{Infinite Graphs}
 \label{sec:1.2}
 
-The statement of Ramsey's theorem in the introduction, \autoref{thr:Ramsey}
-concerns partitioning a countably infinite set $\Gamma$ into $r\in\Z^+$ classes.
+The statement of Ramsey's theorem in the introduction, \cite{thr:Ramsey}
+concerns partitioning a countably infinite set $\Gamma$ into $r$ disjoint 
+subsets, where $r\in\Z^+$.
 
 \begin{definition}[Infinite graph]
 
@@ -288,10 +289,10 @@ concerns partitioning a countably infinite set $\Gamma$ into $r\in\Z^+$ classes.
 
 \begin{theorem}[Ramsey's theorem for Infinite Graphs]\label{thm:ram}
 
-    For any r-colouring of the edges of $K_\infty$, i.e. 
-    $\chi :\Gamma^{(2)}\to\{c_1,\ldots, c_r\}$ there exists 
-    within it a countably infinite monochromatic clique. I.e. $\exists
-    X \subset K_\infty$ such that $X$ is countably infinite, and $\chi|_{X^{(2)}}$ is the
+    For any r-colouring of the edges of $K_\infty$, say
+    $\chi :\Gamma^{(2)}\to\{c_1,\ldots, c_r\}$, there exists 
+    within it a countably infinite monochromatic clique. In other words, there 
+    exists $X \subset K_\infty$ such that $X$ is countably infinite, and $\chi|_{X^{(2)}}$ is the
     constant function.
 
 \end{theorem}
@@ -324,7 +325,8 @@ subset $\Delta \subset \Gamma$.
 
 \end{proof}
 
-This result has the following result from analysis as an interesting corollary:
+An interesting corollary of this result is the following fundamental theorem from 
+analysis:
 
 \textbf{Corollary}: [Bolzano-Weierstrass Theorem]
 
