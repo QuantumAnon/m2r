@@ -35,7 +35,7 @@ systems of linear homogeneous equations, in the sense that will be specified now
 
 \begin{definition}[Monochromatic vectors]
 Let $X$ be non-empty and let $\chi$ be a $k$-colouring of $X$ for some 
-$k\in\mathbb{N}$. Then an element $x = (x_{1},\cdots,x_{n})\in X^n$ is 
+$k\in\mathbb{Z}^+$. Then an element $x = (x_{1},\cdots,x_{n})\in X^n$ is 
 \emph{monochromatic} if: 
 $$\exists p \in [k] : \chi\bigg(\{x_{1},\cdots,x_{n}\}\bigg) = \{p\}$$
 \end{definition}
@@ -80,7 +80,7 @@ $$\Pi := \bigg\{\mathcal{C}_{1},\cdots,\mathcal{C}_{r}\bigg\}$$ such that:
 \begin{enumerate}[label=(\roman*)]
 \item $\sum\limits_{j\in\mathcal{C}_{1}}g_{j} = 0$
 \item $\forall i \in [r]\setminus\{1\}$, $\sum\limits_{ j \in {\mathcal{C}_{i}}}g_{j} 
-\in span\bigg\{g_{j} \ \bigg| \ j\in\bigcup\limits_{k \in [r]: k < i }\mathcal{C}_{k}\bigg\}$
+\in \spa\bigg\{g_{j} \ \bigg| \ j\in\bigcup\limits_{k \in [r]: k < i }\mathcal{C}_{k}\bigg\}$
 \end{enumerate}
 
 \end{definition}
@@ -93,13 +93,13 @@ and only if it satisfies the columns property.
 \end{theorem}
 
 To prove Rado's theorem we use the following lemmas (following Liu, see \cite{Liu2016}), 
-the first of which results almost immediately by application of Gram-Schmidt orthogonalization:
+the first of which is implied almost immediately by application of Gram-Schmidt orthogonalization:
 
 \begin{lemma}\label{lem:vec}
-Let $\{v_{1},\cdots,v_{n},v\}\in \mathbb{Z}^m$. If $v \not\in span\{v_{1},\cdots,v_{n}\}$, 
+Let $\{v_{1},\cdots,v_{n},v\}\in \mathbb{Z}^m$. If $v \not\in \spa\{v_{1},\cdots,v_{n}\}$, 
 then:
 \begin{center}
-    $\exists u\in\mathbb{Z}^m$ such that: $u.v\not = 0$ and $\forall i\in [n], u.v_{i}=0$.
+    $\exists u\in\mathbb{Z}^m$ such that: $u\cdot v\not = 0$ and $\forall i\in [n], u\cdot v_{i}=0$.
 \end{center}
 
 \end{lemma}
@@ -115,7 +115,7 @@ Let $m,p,c \in \mathbb{N}$. Then we define:
  $ \forall i>j, \ |n_{i}|\leq p\bigg\} $
 \end{center} 
 and for a given $y\in \mathbb{N}^{m+1}$ the \emph{(m,p,c)-set} is defined as:
-$$S_{m,p,c}(y):=\bigg\{y.n \ | n\in N_{m,p,c}\bigg\}$$
+$$S_{m,p,c}(y):=\bigg\{y\cdot n \ | n\in N_{m,p,c}\bigg\}$$
 
 Then $y$ is called a \emph{generator} of the $(m,p,c)$-set.
 \end{definition}
@@ -200,15 +200,15 @@ Rado's theorem translates a combinatorial property of the positive
 integers into an algebraic property of matrices over $\mathbb{Q}$. 
 That is, it enables us to solve general problems of the Hilbert-Schur-van 
 der Waerden kind, through a unified algebraic approach. It also provides us 
-with an algebraic constraint on Ramsey sets in $\mathbb{Z}$.
+with an algebraic constraint on Ramsey sets in $\mathbb{N}$.
 
 Rado's approach was to phrase an arithmetical problem as a question about 
 monochromatic solutions to certain systems of homogeneous equations.
 A similar approach enables us to translate a combinatorial property of finite subsets 
-of the Euclidean space into a geometrical property. In particular we are now interested
+of Euclidean space into a geometrical property. In particular we are now interested
 in affine linear equations on $\mathbb{R}$ that do not admit monochromatic solutions 
 (Lemma \ref{lem:radreal}).
-These allow us to formulate a geometrical necessary condition for a finite 
+These allow us to formulate a necessary geometrical condition for a finite 
 set to be Ramsey in $\mathbb{R}^n$.
 
 We first define a notion of Ramseyness for finite sets $F\in\mathbb{R}^n$. 
@@ -231,7 +231,7 @@ $F \sim F' \iff $ there exists an isometry  $\Psi$  such that
 \end{center}
 
 Then we define the set of \emph{Euclidean configurations} 
-$$\mathfrak{K}:=\mathfrak{F}\backslash\sim$$
+$$\mathfrak{K}:=\mathfrak{F}/ \sim$$
 An element $K=[F]$ of $\mathfrak{K}$ is called a \emph{configuration}.
 If $F$ and $F'$ are figures with $[F]=[F']$, we say that they have the same 
 configuration.
@@ -242,11 +242,11 @@ A configuration $K$ is \emph{Ramsey} if:
 \begin{center}
 $\forall r\in\mathbb{N}$, $\exists n\in\mathbb{N}$ such that, 
 under any $r$-colouring of $\mathbb{R}^n$,  there exists a monochromatic 
-$F\in K$ in $\mathbb{R}^n$
+$F\in K$ in $\mathbb{R}^n$.
 \end{center}
 \end{definition}
 
-A natural question to consider is whether there exists any class of 
+A natural question to consider is whether there exists a class of 
 configurations that are not Ramsey. Consider the following geometrical 
 property of a figure:
 
@@ -272,7 +272,8 @@ We will use the following characterisation of a spherical figure:
 
 \begin{lemma}
 A figure $F = \{v_{0},\cdots,v_{k}\}$ is not spherical if and only if there 
-exist scalars $\{0\}\neq\{\mu_{1},\cdots, \mu_{k},b\}\subset\mathbb{R}$ such that:
+exist scalars $\{\mu_{1},\cdots, \mu_{k},b\}\subset\mathbb{R}$ not all zero 
+such that:
 
 \begin{enumerate}[label=(\roman*)]
 \item $\sum_{i=1}^{k} \mu_{i} (v_{i} - v_{0})= 0$;
@@ -308,7 +309,7 @@ Notice that if $F$ is not spherical, then any other figure with the same
 configuration is not spherical. In particular, if $F$ has the same configuration 
 as $E$, then the elements of $E$ satisfy our last Lemma for the same choice 
 of scalars $\{\mu_{1},\cdots, \mu_{k},b\}\subset\mathbb{R}$, as 
-the equations (1) and (2) are invariant under isometry in $\mathbb{R}^n$.
+the equations (i) and (ii) are invariant under isometry in $\mathbb{R}^n$.
 
 
 Our main tool in the proof is the following Lemma, which builds up on later results from Rado 
