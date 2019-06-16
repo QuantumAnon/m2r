@@ -425,15 +425,78 @@ In fact, a direct corollary of the finite Ramsey theorem from the original paper
 \cite[267]{Ramsey1930} is that the class of finite complete graphs is a Ramsey
 class.
 
-\textit{yet to write}
-\begin{itemize}
-\item Mention Ramsey + JEP => AP
-\item Automorphisms of the random graph (Cameron2013; Cameron1990)
-\item Define Strong Amalgamation Property and Extreme Amenability 
-\item Theorems 4.7/8 from Kechris2005 
-\item Conclusion, apply Ramsey Class property to random graph (nice result
-  about groups and colouring)
-\end{itemize}
+We start with an auxiliary remark
+
+\begin{remark}
+  Let $\str{A},\str{B}\in\ogra$ such that $\str{A}\subseteq\str{B}$.\\
+
+  Define $\str{B'}$ to be the natural structure for $\sstr{B}{A}$ given by
+  contracting copies of $\str{A}$ in $\str{B}$ and adjoining edges
+  appropriately.
+
+  Then $\str{C'}\radoArrow{B'}{A}{t} \implies \exists \str{C}\in\ogra :
+  \str{C}\radoArrow{B}{A}{t}$ by replacing  every $B'\in\sstr{C'}{B'}$ with a
+  full copy of $B$.
+\end{remark}
+
+\begin{theorem}
+  The class $\ogra$ is Ramsey.
+
+  \begin{proof}[proof\ sketch.]
+    First notice that $\rel{B}$ can be divided into two partitions,
+    $U = \{\vec{x}\in\rel{B} : \exists \str{A}\subseteq\str{B}, \vec{x}\in\rel{A}\}$
+    and $V = \{\vec{x}\in\rel{B} : \forall \str{A}\subseteq\str{B},
+    \neg(\vec{x}\in\rel{A})\}$.
+
+    We use this fact to construct a $\str{C}\in\ogra$ which will satisfy
+    $\str{C}\radoArrow{B}{A}t$.
+    We state that $C\ni x_i \in B^N$ where $N$ is some, currently undetermined,
+    positive integer.
+    Define $\pi_j$ as projection onto the $j$-th index.
+    By carefully choosing the elements of $\rel{C}$ and using our partitioning
+    result, we can ensure the following $\str{A'}\in\sstr{C}{A} \iff \forall i =
+    1, \dots, N; \pi_i(\str{A'})\in\sstr{B}{A}$.
+
+    We then write $\sstr{B}{A}$ as $\{\str{A}_1,\dots,\str{A}_r\}$ or
+    $R=\{1,\dots,r\}$.
+    Thus $\sstr{C}{A}$ is in bijection with $R^N$.
+
+    Using the Hales-Jewett theorem, for any $t\in\Z^+$, we can find a $N\in\Z^+$
+    such that any $t$-colouring of $R^N$ will contain a monochromatic line.
+    By our construction this monochrome line gives us a monochrome line of
+    $\str{A}_i$ all of which are substructures of $\str{B}$ which completes the
+    proof.
+  \end{proof}
+\end{theorem}
+
+As shown by~\citeauthor{Kechris2005}, being a Ramsey class is a very strong
+property that yields several results about the Fraïssé limit of the class and
+its automorphism group.
+One of the strongest results is that $\aut\orand$ is extremely amenable.
+
+\begin{definition}[$G$-flows and Extreme Amenability\cite{Kechris2005}]
+  Let $G$ be a topological group and consider it acting on a compact Hausdorff
+  topological space $X$, we call this action a $G$-flow on $X$.
+  If the flow admits no proper subgroups, i.e. every orbit on $X$ is dense in
+  $X$, we call the flow \textit{minimal}.
+  It can be shown that every topological group has a minimal flow, furthermore,
+  there exists a largest minimal flow which surjects onto any other, we call
+  this the \textit{universal} minimal flow of $G$.
+  
+  If the universal minimal flow is a single point, we say $G$ is \textit{extremely amenable}.
+\end{definition}
+
+The following result makes precise the correspondence between Ramsey classes and
+certain extremely amenable topological groups.
+
+\begin{theorem}[\citeauthor{Kechris2005}~\cite{Kechris2005}]
+  Let $\class{K}$ be a Fraïssé class and $\str{K}$ its limit.
+  Then the following are equivalent:
+  \begin{itemize}
+  \item $\class{K}$ is Ramsey.
+  \item $\aut\str{K}$ is extremely amenable.
+  \end{itemize}
+\end{theorem}
 
 % LocalWords:  Ramsey subgraphs subgraph Fraïssé surjective
 
