@@ -3,14 +3,13 @@
 \subsection{Finite Graphs}
 \label{sec:1.1}
 
-Whilst Ramsey's original paper \cite{Ramsey1930} concerned with a problem of logic, Erd{\"o}s and 
-Szekeres \cite{Erdos1935} reformulated his work in a graph theoretic sense. The idea of proving 
+Whilst Ramsey's original paper \cite{Ramsey1930} is concerned with a problem of logic, Erd{\"o}s and 
+Szekeres \cite{Erdos1935} reformulated his work in a graph theoretical sense. The idea of proving 
 the existence of regular substructure within an apparently chaotic superstructure
 is immediately applicable to graphs. The content of this section primarily follows 
-that of Bollobas book \textit{Modern Graph Theory} \cite{Bollobas1998}, and 
-I will be using his notation throughout.\\
+that of Bollobás's book \textit{Modern Graph Theory} \cite{Bollobas1998}.
 
-In the graph below, we partition the edges into two disjoint classes: red lines and blue 
+In the graph below, we partition the edges into two disjoint sets: red lines and blue 
 lines. In turns out that no matter how we partition our edges, we will always get
 red triangles or blue triangles. In this particular partition, we get two 
 red triangles.
@@ -69,7 +68,7 @@ X^{(k)} &= \{Y:Y\subseteq X, |Y|=k\}.
 \begin{definition}[Complete graph]
 
     We say a graph $G:=(V,E)$ is \textit{complete} if $E=V^{(2)}$. Intuitively, a graph 
-    is complete if every pair of vertices has an edge connecting them. We denoted the complete 
+    is complete if every pair of vertices has an edge connecting them. We denote the complete 
     graph of order $n$ by $K_n$.
 
 \end{definition}
@@ -78,18 +77,18 @@ X^{(k)} &= \{Y:Y\subseteq X, |Y|=k\}.
 
     We say $G':=(V',E')$ is a \textit{subgraph} of $G:=(V,E)$ if $V'\subseteq V$, 
     and $E'\subseteq E$. We write $G'\subseteq G$. We say $G'$ is an \textit{induced} 
-    subgraph of $G$ if $E'=E\cap V'^{(2)}$. We say an induced subgraph $G'$ a \textit{clique} of $G$ if it is complete.
+    subgraph of $G$ if $E'=E\cap V'^{(2)}$. We say an induced subgraph $G'$ is a \textit{clique} of $G$ if it is complete.
 
 \end{definition}
 
 Earlier we mentioned partitioning the edges into disjoint classes. We can think 
-of these classes as being `colourings' of the edges. In an \textit{r-colouring}, 
+of these classes as being `colourings' of the edges. In an $r$-\textit{colouring},
 we partition our edges into $r$ disjoint classes, called \textit{colours}. The 
 following definition helps explain this:
 
 \begin{definition}[Colouring of a set]
 
-    Let $X$ be a non-empty set. For $r\in\Z^+$, a $r-colouring$ of $X$ is a 
+    Let $X$ be a non-empty set. For $r\in\Z^+$, a $r$-\textit{colouring} of $X$ is a 
     partition of $X$ into $r$ equivalence classes.
     
     Equivalently, a $r$-colouring of $X$ is the partition of $X$ induced by an 
@@ -111,7 +110,7 @@ following definition helps explain this:
 
     For $s,t\in\Z^+$, we define the \textit{Ramsey number} of $s$ and $t$, $R(s,t)$, 
     to be the least positive integer such that any 2-colouring of $K_n$ contains
-    as a clique either a monochromatic $K_s$ or a monochromatic $K_t$ whenever 
+    as a clique either a monochromatic $K_s$ or a monochromatic $K_t$, whenever 
     $n\geq R(s,t)$.
 
 \end{definition}
@@ -345,6 +344,8 @@ a convergent subsequence.
     is bounded, by the monotone convergence theorem it must converge.\cite{Narayana2017}
 
 \end{proof}
+
+
 
 %\newdimen\R
 %\R=0.8cm
