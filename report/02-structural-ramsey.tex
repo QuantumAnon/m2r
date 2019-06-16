@@ -425,6 +425,35 @@ In fact, a direct corollary of the finite Ramsey theorem from the original paper
 \cite[267]{Ramsey1930} is that the class of finite complete graphs is a Ramsey
 class.
 
+One might hope that this property could be extended to $\gra$, but this is not
+the case as given by the result below
+\begin{theorem}[Ramsey property in $\gra$\cite{Nesetril1995}]
+  $\gra$ has the $\str{A}$-Ramsey property $\iff$ $\str{A}$ is either a complete
+  graph or the complement of a complete graph.
+\end{theorem}
+This is a non-trivial result whose proof goes beyond the scope of this project,
+but we refer the reader to \cite[1375-1377]{Nesetril1995} for a rigorous argument.
+With this we find that the only classes of finite unordered graphs that are
+Ramsey are the complete graphs or empty graphs.
+
+We now turn our attention to a slight variant of $\gra$.
+
+Define $\ogra = (\gra,<)$ to be the class of finite graphs with an additional
+relation imposed upon them.
+A finite linear order on the vertices, $<$.
+
+Since $\rand$ is a countable structure, we can put a linear order on it as well
+to produce the structure $\orand$, the ordered random graph.
+By proceeding through the same proofs in the previous section, albeit taking
+care to preserve the order on the vertices, one can also show that $\ogra =
+\age\orand$.
+
+Proving that $\ogra$ is Ramsey is again, highly non-trivial.
+One approach is through the `amalgamation technique' of
+\citeauthor{Nesetril1977} detailed in~\cite[1389--1391]{Nesetril1995}.
+This is a combinatorial method that has been applied to many other structures
+with great success, which we now apply to this problem.
+
 We start with an auxiliary remark
 
 \begin{remark}
@@ -498,11 +527,6 @@ certain extremely amenable topological groups.
   \end{itemize}
 \end{theorem}
 
-<<<<<<< Updated upstream
-=======
-
-
->>>>>>> Stashed changes
 % LocalWords:  Ramsey subgraphs subgraph Fraïssé surjective Hausdorff
 
 % Local Variables:
