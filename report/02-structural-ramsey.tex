@@ -1,24 +1,22 @@
 \documentclass[../m2r-report.tex]{subfile}
 
-As we've seen, Ramsey theory has manifestations in areas as diverse as graph
+As we have seen, Ramsey theory has manifestations in areas as diverse as graph
 theory, combinatorics, and geometry.
 The field of Structural Ramsey theory aims to use model theory to study this
-generality and the implications of applying Ramsey type results to different
-objects.
+generality, and also the implications of applying Ramsey type results to a wider
+class of objects.
 An object that demonstrates many of the results in Structural Ramsey theory is
 the Random (or Rado) graph.
 It is an example of a Fraïssé limit, which is a construction found in
 model theory.
-Results from Structural Ramsey theory can then be used to state properties of
-the Random graph.
+%Results from Structural Ramsey theory can then be used to state properties of
+%the Random graph.
 
 This section will focus on the preliminaries behind the construction of Fraïssé
 limits, the existence and uniqueness of the Random graph, and some of the
 Ramsey type properties that it exhibits.
 
 \subsection{Structures, Ages and Amalgamation Classes}
-
-We begin with a few preliminaries and some important results about them.
 
 \begin{definition}[Structures over a Relational Language\cite{Hubicka2015}]
   Let $I$ be a finite index set.
@@ -48,8 +46,8 @@ Any $\str{A}\in\flo$ must satisfy the following properties
   $(y,z)\in\rel[<]{A} \implies (x,z)\in\rel[<]{A}$
 \item\textbf{Semiconnex}: $\forall x, y \in A : x \neq y \implies (x,y) \in
   \rel[<]{A}$ or $ (y,x) \in \rel[<]{A}$
-\item\textbf{Irreflexive}: $\forall x, y \in A : (x,y)\in\rel[<]{A} \implies
-  (y,x)\notin\rel[<]{A}$
+\item\textbf{Antisymmetry}: $\forall x, y \in A : (x,y)\in\rel[<]{A} \implies
+  \neg((y,x)\in\rel[<]{A})$
 \end{itemize}
 
 \begin{definition}[Homomorphisms and Substructures\cite{Hubicka2016,Hubicka2015}]
@@ -389,7 +387,7 @@ following properties.
     After which we will have found a substructure of $\rand$ which is isomorphic
     to $\str{A}$ implying that $\gra\subseteq\age\rand$.
 
-    Thus $\gra=\age\rand$
+    Thus $\gra=\age\rand$.
 
   \end{proof}
 \end{prop}
@@ -403,24 +401,25 @@ We now introduce the idea of a Ramsey class which applies this to classes of
 structures.
 
 \begin{definition}[Ramsey Class\cite{Nesetril1995}]
-  A structure $\str{C}$ is said to be $(t,\str{A})$ Ramsey for a structure
-  $\str{B}$ if every $t$-colouring of the set $\sstr{C}{A}$ contains
+  A structure $\str{C}$ is said to be $(t,\str{A})$\textit{-Ramsey} for a structure
+  $\str{B}$ into which $\str{A}$ embeds, if every $t$-colouring of the set $\sstr{C}{A}$ contains
   $\str{B'}: \str{C}\supseteq\str{B'} \simeq \str{B}$ such that $\sstr{B'}{A}$ is
   monochromatic.
   To make this more concise, we write $\str{C}\radoArrow{\str{B}}{\str{A}}{t}$.
 
-  A class $\class{K}$ is said to have the $\str{A}$-Ramsey property if for every
-  $\str{B}\in\class{K}$ and $t\in\Z^+$, there exists $\str{C}\in\class{K}$ such that
-  $\str{C}\radoArrow{\str{B}}{\str{A}}{t}$.
+  A class $\class{K}$ is said to have the $\str{A}$\textit{-Ramsey property} if
+  for every $\str{B}\in\class{K}$ that $\str{A}$ embeds into and $t\in\Z^+$,
+  there exists $\str{C}\in\class{K}$ such that
+  $\str{C}\radoArrow{\str{B}}{\str{A}}{t}$. 
 
   If $\class{K}$ has the $\str{A}$-Ramsey property for every $\str{A}\in
-  \class{K}$, then $\class{K}$ is a Ramsey class.
+  \class{K}$, then $\class{K}$ is a \textit{Ramsey class}.
 \end{definition}
 
 A concrete example can be given in terms of finite complete graphs.
 The well-known fact that any 2-colouring of $K_6$ contains a monochromatic
 $K_3$ translates to the statement $K_6\radoArrow{K_3}{K_2}{2}$.
-Due to the generalised Ramsey theorem (\ref{thr:genRamsey}), we can state that
+Due to the abridged Ramsey theorem (\ref{thr:genRamsey}), we can state that
 the class of finite complete graphs has $K_2$-Ramsey property.
 In fact, a direct corollary of the finite Ramsey theorem from the original paper
 \cite[267]{Ramsey1930} is that the class of finite complete graphs is a Ramsey
