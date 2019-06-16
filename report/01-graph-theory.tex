@@ -116,10 +116,10 @@ following definition helps explain this:
 
 \end{definition}
 
-We can now state the fundamental question that lies at the heart of Ramsey 
-theory in a finite graph theoretic sense.
+We can now state the simplest form of Ramsey's theorem in a finite graph theoretical 
+sense.
 
-\begin{prop}[Ramsey's theorem for finite graphs]\label{prop:ram}
+\begin{prop}\label{prop:ram}
 
     $R(s,t)$ is a well-defined function for all $s,t\in\Z^+$, and
     $$R(s,t)\leq R(s-1,t)+R(s,t-1)$$
@@ -159,9 +159,12 @@ I now return to example presented earlier:
 \end{example}
 
 \begin{proof}
-    Notice that $R(3,3) \leq 2R(3,2) = 6$. To show that $R(3,3)>5$, we colour the 
-    exterior edges of $K_5$ red, and the interior diagonal edges blue, shown in 
-    the graph below:
+    Notice that $R(3,3) \leq 2R(3,2) = 6$. To show that $R(3,3)>5$, we assume for 
+    a contradiction that $R(3,3)=5$. Then for every 2-colouring of $K_5$, we should 
+    be able to find a monochromatic $K_3$. However, if we consider the colouring 
+    in which we colour the exterior edges of $K_5$ red, and the interior diagonal 
+    edges blue, shown in the graph below, we see that there are no red triangles
+    nor blue triangles,.
 
     \begin{figure}[h]
         \begin{center}
@@ -187,10 +190,9 @@ I now return to example presented earlier:
         
         \end{center}
         
-        \caption{Graph of 5 vertices}
+        \caption{A particular colouring of $K_5$}
     \end{figure}
-    Hence we see that there are no red triangles nor blue triangles, so no 
-    monochromatic $K_3$. Hence $R(3,3)=6$.\cite{Greenwood1955}
+    We have our contradiction. Hence $R(3,3)=6$.\cite{Greenwood1955}
 \end{proof}
 
 \textbf{Remark}: In the same paper \cite{Greenwood1955}, Greenwood and Gleason also proved the 
@@ -207,7 +209,7 @@ Greenwood and Gleason also showed that $R_3(3,3,3)=17$, i.e. every complete grap
 of order at least 17 has a monochromatic $K_3$, when coloured with 
 three colours. In fact, \autoref{prop:ram} holds for any finite $r$-colouring:
 
-\begin{theorem}[Ramsey's Theorem for $r$-colours] \label{thr:ram2}
+\begin{theorem} \label{thr:ram2}
 
     Given $r$ positive integers, $s_1, s_2,\ldots, s_r$, there exist a least
     positive integer, $R_r(s_1,\ldots,s_r)$, such that any r-colouring of $K_n$ with 
@@ -239,7 +241,7 @@ looking at partitioning (colouring) the set $V^{(2)}$ (the edges) into $r$ class
 However, \autoref{thr:ram2} still holds when we partition $V^{(k)}$ into $r$ classes, 
 for any $k,r\in\Z^+$.
 
-\begin{theorem}[Ramsey's Theorem] \label{thr:hyper}
+\begin{theorem}[Ramsey (finite version)] \label{thr:hyper}
 
     Given $r$ positive integers, $s_1, s_2,\ldots, s_r$, such that $1<k<\text\{min\}{s_1\ldots s_r}$, there exist a least
     positive integer, $R_r^{(k)}(s_1,\ldots,s_r)$, such that any $r$-colouring of $[n]^{(k)}$ 
@@ -287,7 +289,7 @@ subsets, where $r\in\Z^+$.
 
 \end{definition}
 
-\begin{theorem}[Ramsey's theorem for Infinite Graphs]\label{thm:ram}
+\begin{theorem}[Ramsey (infinite version)]\label{thm:ram}
 
     For any r-colouring of the edges of $K_\infty$, say
     $\chi :\Gamma^{(2)}\to\{c_1,\ldots, c_r\}$, there exists 
