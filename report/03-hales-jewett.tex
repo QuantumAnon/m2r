@@ -14,6 +14,7 @@
 A related class of foundational theorems of Ramsey theory concerns sets with an
 ordering and sets of words of symbols.
 % Order the theorem names by date
+%% I don't think this makes sense since this chapter derives gallai-witt and van der waerden from hales-jewett despite the latter being proven after the former
 This class includes the Hales-Jewett theorem, the Gallai-Witt theorem and van
 der Waerden's theorem.
 The first concerns sets of words of symbols, that is, ordered tuples of elements
@@ -308,3 +309,12 @@ a substructure of the same kind where $A$ has density $\delta + c + \gamma$, whe
 From a large enough structure, this iteration can be continued 
 until $A$ has a density greater than $1$ in some substructure, 
 a contradiction.
+
+In fact, it is often difficult to find such substructures $S'$, so instead one finds a "simple" (in some well defined sense) subset $T$ in which $A$ has density $\delta + c$, and then proves that such simple sets may be partitioned into substructures of the desired type such that each member of $T$ is contained in approximately the same number of substructures, and finally uses an averaging argument to show that $A$ has density $\delta + c$ in at least one of these substructures.
+
+Part of the motivation behind finding a new proof of the DHJ theorem is the fact that Furstenberg's proof used non-finitary ergodic methods reliant on the axiom of choice, which meant that it could not be used to construct an upper bound for a DHJ number\cite{Furstenberg1991}. The Polymath project's proof, on the other hand, was finitary, meaning it could be formulated as a finite set of propositions reliant on a finite set of axioms, and thus gave a method for finding upper bounds for the number, albeit bounds of massive order.
+
+\paragraph*{}
+Of course, none of these proofs are constructive of their respective numbers, and thus our knowledge of the distribution of Hales-Jewett numbers, Van der Waerden numbers and Gallai-Witt numbers continues to expand as computational power and theoretical methods improve. As they do, our understanding of the fields connected to these theorems expands as well. The existence of numerous proofs of the Density Hales-Jewett theorem and related results highlights a theme common across Ramsey theory; that of connecting seemingly unrelated areas of mathematics using the universal language of combinatorics. 
+
+In fact, Terrence Tao once called the various proofs of Szemeredi's theorem a "Rosetta stone" for connecting disparate areas of mathematics\cite{math/0512114}. We can also see this on a simple scale in the relationships between the Hales-Jewett theorem and those of Van der Waerden and Gallai, how a fact about columns in a cube or words in an alphabet can imply results about the natural numbers or vectors. We will see in the next section how the principles developed in the prior chapters can be connected with the study of Euclidean space, highlighting once more how Ramsey theory can relate properties of structures to those of their underlying sets, and thus create relationships between properties of the structures themselves.
