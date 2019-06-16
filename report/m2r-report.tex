@@ -14,7 +14,12 @@
 \usepackage{adjustbox}
 \usetikzlibrary{cd}
 
-\usepackage[style=numeric]{biblatex}
+\usepackage[%
+style=numeric,
+sorting=nyt
+]{biblatex}
+\usepackage[UKenglish]{babel}
+\usepackage{csquotes}
 \usepackage{hyperref}
 \usepackage{aliascnt}
 
@@ -77,8 +82,10 @@
 \DeclareMathOperator{\adj}{Adj}
 
 \newcommand{\flo}{\class{R}^{\text{lo}}}
-\newcommand{\gra}{\class{G}^{\text{fin}}}
+\newcommand{\gra}{\mathrm{Gra}}
+\newcommand{\ogra}{\mathrm{Gra}_<}
 \newcommand{\rand}{\mathbf{G}^{\text{Ran}}}
+\newcommand{\orand}{\mathbf{G}^{\text{Ran}}_{<}}
 
 \bibliography{ref}
 
@@ -117,30 +124,25 @@
 \end{titlingpage}
 
 % Section numbers are a rough guide, they can be switched around later
-\section*{Introduction}
-\label{sec:0}
+\section*{Introduction}\label{sec:0}
 \subfile{00-intro}
 
 \newpage
-\section{Graph Ramsey Theory}
-\label{sec:1}
+\section{Graph Ramsey Theory}\label{sec:1}
 \subfile{01-graph-theory}
 
 \newpage
-\section{Combinatorial Ramsey Theory}
-\label{sec:2}
+\section{Combinatorial Ramsey Theory}\label{sec:2}
 \subfile{03-hales-jewett.tex}
 
 \newpage
-\section{Euclidean Ramsey Theory}
-\label{sec:3}
+\section{Euclidean Ramsey Theory}\label{sec:3}
 \subfile{04-euclidean-ramsey-theory}
 
 \newpage
-\section{Structural Ramsey Theory}
-\label{sec:4}
+\section{Structural Ramsey Theory}\label{sec:4}
 \subfile{02-structural-ramsey}
 
-\printbibliography
+\printbibliography{}
 \end{document}
 % LocalWords:  Ramsey Jewett ramsey
