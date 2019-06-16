@@ -1,24 +1,22 @@
 \documentclass[../m2r-report.tex]{subfile}
 
-As we've seen, Ramsey theory has manifestations in areas as diverse as graph
+As we have seen, Ramsey theory has manifestations in areas as diverse as graph
 theory, combinatorics, and geometry.
 The field of Structural Ramsey theory aims to use model theory to study this
-generality and the implications of applying Ramsey type results to different
-objects.
+generality, and also the implications of applying Ramsey type results to a wider
+class of objects.
 An object that demonstrates many of the results in Structural Ramsey theory is
 the Random (or Rado) graph.
 It is an example of a Fraïssé limit, which is a construction found in
 model theory.
-Results from Structural Ramsey theory can then be used to state properties of
-the Random graph.
+%Results from Structural Ramsey theory can then be used to state properties of
+%the Random graph.
 
 This section will focus on the preliminaries behind the construction of Fraïssé
 limits, the existence and uniqueness of the Random graph, and some of the
 Ramsey type properties that it exhibits.
 
 \subsection{Structures, Ages and Amalgamation Classes}
-
-We begin with a few preliminaries and some important results about them.
 
 \begin{definition}[Structures over a Relational Language\cite{Hubicka2015}]
   Let $I$ be a finite index set.
@@ -48,8 +46,8 @@ Any $\str{A}\in\flo$ must satisfy the following properties
   $(y,z)\in\rel[<]{A} \implies (x,z)\in\rel[<]{A}$
 \item\textbf{Semiconnex}: $\forall x, y \in A : x \neq y \implies (x,y) \in
   \rel[<]{A}$ or $ (y,x) \in \rel[<]{A}$
-\item\textbf{Irreflexive}: $\forall x, y \in A : (x,y)\in\rel[<]{A} \implies
-  (y,x)\notin\rel[<]{A}$
+\item\textbf{Antisymmetry}: $\forall x, y \in A : (x,y)\in\rel[<]{A} \implies
+  \neg((y,x)\in\rel[<]{A})$
 \end{itemize}
 
 \begin{definition}[Homomorphisms and Substructures\cite{Hubicka2016,Hubicka2015}]
@@ -389,7 +387,7 @@ following properties.
     After which we will have found a substructure of $\rand$ which is isomorphic
     to $\str{A}$ implying that $\gra\subseteq\age\rand$.
 
-    Thus $\gra=\age\rand$
+    Thus $\gra=\age\rand$.
 
   \end{proof}
 \end{prop}
@@ -403,40 +401,133 @@ We now introduce the idea of a Ramsey class which applies this to classes of
 structures.
 
 \begin{definition}[Ramsey Class\cite{Nesetril1995}]
-  A structure $\str{C}$ is said to be $(t,\str{A})$ Ramsey for a structure
-  $\str{B}$ if every $t$-colouring of the set $\sstr{C}{A}$ contains
+  A structure $\str{C}$ is said to be $(t,\str{A})$\textit{-Ramsey} for a structure
+  $\str{B}$ into which $\str{A}$ embeds, if every $t$-colouring of the set $\sstr{C}{A}$ contains
   $\str{B'}: \str{C}\supseteq\str{B'} \simeq \str{B}$ such that $\sstr{B'}{A}$ is
   monochromatic.
   To make this more concise, we write $\str{C}\radoArrow{\str{B}}{\str{A}}{t}$.
 
-  A class $\class{K}$ is said to have the $\str{A}$-Ramsey property if for every
-  $\str{B}\in\class{K}$ and $t\in\Z^+$, there exists $\str{C}\in\class{K}$ such that
-  $\str{C}\radoArrow{\str{B}}{\str{A}}{t}$.
+  A class $\class{K}$ is said to have the $\str{A}$\textit{-Ramsey property} if
+  for every $\str{B}\in\class{K}$ that $\str{A}$ embeds into and $t\in\Z^+$,
+  there exists $\str{C}\in\class{K}$ such that
+  $\str{C}\radoArrow{\str{B}}{\str{A}}{t}$. 
 
   If $\class{K}$ has the $\str{A}$-Ramsey property for every $\str{A}\in
-  \class{K}$, then $\class{K}$ is a Ramsey class.
+  \class{K}$, then $\class{K}$ is a \textit{Ramsey class}.
 \end{definition}
 
 A concrete example can be given in terms of finite complete graphs.
 The well-known fact that any 2-colouring of $K_6$ contains a monochromatic
 $K_3$ translates to the statement $K_6\radoArrow{K_3}{K_2}{2}$.
-Due to the generalised Ramsey theorem (\ref{thr:genRamsey}), we can state that
+Due to the abridged Ramsey theorem (\ref{thr:genRamsey}), we can state that
 the class of finite complete graphs has $K_2$-Ramsey property.
 In fact, a direct corollary of the finite Ramsey theorem from the original paper
 \cite[267]{Ramsey1930} is that the class of finite complete graphs is a Ramsey
 class.
 
-\textit{yet to write}
-\begin{itemize}
-\item Mention Ramsey + JEP => AP
-\item Automorphisms of the random graph (Cameron2013; Cameron1990)
-\item Define Strong Amalgamation Property and Extreme Amenability 
-\item Theorems 4.7/8 from Kechris2005 
-\item Conclusion, apply Ramsey Class property to random graph (nice result
-  about groups and colouring)
-\end{itemize}
+One might hope that this property could be extended to $\gra$, but this is not
+the case as given by the result below
+\begin{theorem}[Ramsey property in $\gra$\cite{Nesetril1995}]
+  $\gra$ has the $\str{A}$-Ramsey property $\iff$ $\str{A}$ is either a complete
+  graph or the complement of a complete graph.
+\end{theorem}
+This is a non-trivial result whose proof goes beyond the scope of this project,
+but we refer the reader to \cite[1375-1377]{Nesetril1995} for a rigorous argument.
+With this we find that the only classes of finite unordered graphs that are
+Ramsey are the complete graphs or empty graphs.
 
-% LocalWords:  Ramsey subgraphs subgraph Fraïssé surjective
+We now turn our attention to a slight variant of $\gra$.
+
+Define $\ogra = (\gra,<)$ to be the class of finite graphs with an additional
+relation imposed upon them.
+A finite linear order on the vertices, $<$.
+
+Since $\rand$ is a countable structure, we can put a linear order on it as well
+to produce the structure $\orand$, the ordered random graph.
+By proceeding through the same proofs in the previous section, albeit taking
+care to preserve the order on the vertices, one can also show that $\ogra =
+\age\orand$.
+
+Proving that $\ogra$ is Ramsey is again, highly non-trivial.
+One approach is through the `amalgamation technique' of
+\citeauthor{Nesetril1977} detailed in~\cite[1389--1391]{Nesetril1995}.
+This is a combinatorial method that has been applied to many other structures
+with great success, which we now apply to this problem.
+
+We start with an auxiliary remark
+
+\begin{remark}
+  Let $\str{A},\str{B}\in\ogra$ such that $\str{A}\subseteq\str{B}$.\\
+
+  Define $\str{B'}$ to be the natural structure for $\sstr{B}{A}$ given by
+  contracting copies of $\str{A}$ in $\str{B}$ and adjoining edges
+  appropriately.
+
+  Then $\str{C'}\radoArrow{B'}{A}{t} \implies \exists \str{C}\in\ogra :
+  \str{C}\radoArrow{B}{A}{t}$ by replacing  every $B'\in\sstr{C'}{B'}$ with a
+  full copy of $B$.
+\end{remark}
+
+\begin{theorem}
+  The class $\ogra$ is Ramsey.
+
+  \begin{proof}[proof\ sketch.]
+    First notice that $\rel{B}$ can be divided into two partitions,
+    $U = \{\vec{x}\in\rel{B} : \exists \str{A}\subseteq\str{B}, \vec{x}\in\rel{A}\}$
+    and $V = \{\vec{x}\in\rel{B} : \forall \str{A}\subseteq\str{B},
+    \neg(\vec{x}\in\rel{A})\}$.
+
+    We use this fact to construct a $\str{C}\in\ogra$ which will satisfy
+    $\str{C}\radoArrow{B}{A}t$.
+    We state that $C\ni x_i \in B^N$ where $N$ is some, currently undetermined,
+    positive integer.
+    Define $\pi_j$ as projection onto the $j$-th index.
+    By carefully choosing the elements of $\rel{C}$ and using our partitioning
+    result, we can ensure the following $\str{A'}\in\sstr{C}{A} \iff \forall i =
+    1, \dots, N; \pi_i(\str{A'})\in\sstr{B}{A}$.
+
+    We then write $\sstr{B}{A}$ as $\{\str{A}_1,\dots,\str{A}_r\}$ or
+    $R=\{1,\dots,r\}$.
+    Thus $\sstr{C}{A}$ is in bijection with $R^N$.
+
+    Using the Hales-Jewett theorem, for any $t\in\Z^+$, we can find a $N\in\Z^+$
+    such that any $t$-colouring of $R^N$ will contain a monochromatic line.
+    By our construction this monochrome line gives us a monochrome line of
+    $\str{A}_i$ all of which are substructures of $\str{B}$ which completes the
+    proof.
+  \end{proof}
+\end{theorem}
+
+As shown by~\citeauthor{Kechris2005}, being a Ramsey class is a very strong
+property that yields several results about the Fraïssé limit of the class and
+its automorphism group.
+One of the strongest results is that $\aut\orand$ is extremely amenable.
+
+\begin{definition}[$G$-flows and Extreme Amenability\cite{Kechris2005}]
+  Let $G$ be a topological group and consider it acting on a compact Hausdorff
+  topological space $X$, we call this action a $G$-flow on $X$.
+  If the flow admits no proper subgroups, i.e. every orbit on $X$ is dense in
+  $X$, we call the flow \textit{minimal}.
+  It can be shown that every topological group has a minimal flow, furthermore,
+  there exists a largest minimal flow which surjects onto any other, we call
+  this the \textit{universal} minimal flow of $G$.
+  
+  If the universal minimal flow is a single point, we say $G$ is \textit{extremely amenable}.
+\end{definition}
+
+The following result makes precise the correspondence between Ramsey classes and
+certain extremely amenable topological groups.
+
+\begin{theorem}[\citeauthor{Kechris2005}~\cite{Kechris2005}]
+  Let $\class{K}$ be a Fraïssé class and $\str{K}$ its limit.
+  Then the following are equivalent:
+  \begin{itemize}
+  \item $\class{K}$ is Ramsey.
+  \item $\aut\str{K}$ is extremely amenable.
+  \end{itemize}
+\end{theorem}
+
+% LocalWords:  Ramsey subgraphs subgraph Fraïssé surjective Hausdorff
 
 % Local Variables:
 % TeX-master: "m2r-report.tex"
