@@ -1,19 +1,32 @@
 \documentclass[./m2r-pres.tex]{subfile}
 
-%Consider the set of 6 points, and joining every point to 
-%every other point. This called a complete graph. However we consider colouring 
+%To motivate the key concepts of Ramsey thoery, we first consider the graph of 6 vertices, with 
+%edges joining each point to every other point. This called this the complete graph of order 6. We can consider colouring 
 %the edges either red or blue, shown here.
-%
-%When we've coloured all the edges, we find that we get 2 red triangles. In fact, 
-%no matter how we allocate the red edges and the blue edges to 6 vertices, Ramsey's theorem 
-%states that we will always get red triangles or blue triangles.
 
 \begin{frame}
     \frametitle{A motivational example}
-    
+
     \begin{figure}[h]
         \begin{center}
             \begin{tikzpicture}
+                \draw (0,0) -- (2,0);
+                \draw (2,0) -- (3,1.7321);
+                \draw (3,1.7321) -- (2,3.4641);
+                \draw (2,3.4641) -- (0,3.4641);
+                \draw (0,3.4641) -- (-1,1.7321);
+                \draw (-1,1.7321) -- (0,0);
+                \draw (0,0) -- (2,3.4641);
+                \draw (3,1.7321) -- (-1,1.7321);
+                \draw (2,0) -- (0,3.4641);
+        
+                \draw (0,0) -- (3,1.7321);
+                \draw (3,1.7321) -- (0,3.4641);
+                \draw (0,3.4641) -- (0,0);
+                \draw (2,0) -- (2,3.4641);
+                \draw (2,3.4641) -- (-1,1.7321);
+                \draw (-1,1.72,0) -- (2,0);
+        
                 \filldraw (0,0) circle (2pt);
                 \filldraw (2,0) circle (2pt);
                 \filldraw (3,1.7321) circle (2pt);
@@ -22,7 +35,7 @@
                 \filldraw (-1,1.7321) circle (2pt);
             \end{tikzpicture}
         
-        \end{center}
+        \end{center}  
     \end{figure}
     
 \end{frame}
@@ -34,8 +47,21 @@
         \begin{center}
             \begin{tikzpicture}
                 \draw [blue] (0,0) -- (2,0);
-                \draw [blue] (3,1.7321) -- (-1,1.7321);
+                \draw (2,0) -- (3,1.7321);
+                \draw (3,1.7321) -- (2,3.4641);
+                \draw (2,3.4641) -- (0,3.4641);
+                \draw (0,3.4641) -- (-1,1.7321);
+                \draw (-1,1.7321) -- (0,0);
+                \draw (0,0) -- (2,3.4641);
+                \draw (3,1.7321) -- (-1,1.7321);
+                \draw (2,0) -- (0,3.4641);
         
+                \draw (0,0) -- (3,1.7321);
+                \draw (3,1.7321) -- (0,3.4641);
+                \draw (0,3.4641) -- (0,0);
+                \draw (2,0) -- (2,3.4641);
+                \draw (2,3.4641) -- (-1,1.7321);
+                \draw (-1,1.72,0) -- (2,0);
         
                 \filldraw (0,0) circle (2pt);
                 \filldraw (2,0) circle (2pt);
@@ -45,11 +71,11 @@
                 \filldraw (-1,1.7321) circle (2pt);
             \end{tikzpicture}
         
-        \end{center}       
+        \end{center}  
     \end{figure}
     
-\end{frame}    
-   
+\end{frame}
+
 \begin{frame}
     \frametitle{A motivational example}
 
@@ -57,12 +83,21 @@
         \begin{center}
             \begin{tikzpicture}
                 \draw [blue] (0,0) -- (2,0);
+                \draw [blue] (2,0) -- (3,1.7321);
                 \draw [blue] (3,1.7321) -- (2,3.4641);
-                \draw [blue] (3,1.7321) -- (-1,1.7321);
-                \draw [blue] (0,3.4641) -- (-1,1.7321);
-                \draw [blue] (0,0) -- (2,3.4641);
+                \draw (2,3.4641) -- (0,3.4641);
+                \draw (0,3.4641) -- (-1,1.7321);
+                \draw (-1,1.7321) -- (0,0);
+                \draw (0,0) -- (2,3.4641);
+                \draw (3,1.7321) -- (-1,1.7321);
+                \draw (2,0) -- (0,3.4641);
         
-                \draw [red] (-1,1.72,0) -- (2,0);
+                \draw (0,0) -- (3,1.7321);
+                \draw (3,1.7321) -- (0,3.4641);
+                \draw (0,3.4641) -- (0,0);
+                \draw (2,0) -- (2,3.4641);
+                \draw (2,3.4641) -- (-1,1.7321);
+                \draw (-1,1.72,0) -- (2,0);
         
                 \filldraw (0,0) circle (2pt);
                 \filldraw (2,0) circle (2pt);
@@ -72,10 +107,82 @@
                 \filldraw (-1,1.7321) circle (2pt);
             \end{tikzpicture}
         
-        \end{center}       
+        \end{center}  
     \end{figure}
     
-\end{frame} 
+\end{frame}
+
+\begin{frame}
+    \frametitle{A motivational example}
+
+    \begin{figure}[h]
+        \begin{center}
+            \begin{tikzpicture}
+                \draw [blue] (0,0) -- (2,0);
+                \draw [blue] (2,0) -- (3,1.7321);
+                \draw [blue] (3,1.7321) -- (2,3.4641);
+                \draw [blue] (2,3.4641) -- (0,3.4641);
+                \draw [blue] (0,3.4641) -- (-1,1.7321);
+                \draw (-1,1.7321) -- (0,0);
+                \draw (0,0) -- (2,3.4641);
+                \draw (3,1.7321) -- (-1,1.7321);
+                \draw (2,0) -- (0,3.4641);
+        
+                \draw (0,0) -- (3,1.7321);
+                \draw (3,1.7321) -- (0,3.4641);
+                \draw (0,3.4641) -- (0,0);
+                \draw (2,0) -- (2,3.4641);
+                \draw (2,3.4641) -- (-1,1.7321);
+                \draw (-1,1.72,0) -- (2,0);
+        
+                \filldraw (0,0) circle (2pt);
+                \filldraw (2,0) circle (2pt);
+                \filldraw (3,1.7321) circle (2pt);
+                \filldraw (2,3.4641) circle (2pt);
+                \filldraw (0,3.4641) circle (2pt);
+                \filldraw (-1,1.7321) circle (2pt);
+            \end{tikzpicture}
+        
+        \end{center}  
+    \end{figure}
+    
+\end{frame}
+
+\begin{frame}
+    \frametitle{A motivational example}
+
+    \begin{figure}[h]
+        \begin{center}
+            \begin{tikzpicture}
+                \draw [blue] (0,0) -- (2,0);
+                \draw [blue] (2,0) -- (3,1.7321);
+                \draw [blue] (3,1.7321) -- (2,3.4641);
+                \draw [blue] (2,3.4641) -- (0,3.4641);
+                \draw [blue] (0,3.4641) -- (-1,1.7321);
+                \draw [blue] (-1,1.7321) -- (0,0);
+                \draw [blue] (0,0) -- (2,3.4641);
+                \draw (3,1.7321) -- (-1,1.7321);
+                \draw (2,0) -- (0,3.4641);
+        
+                \draw (0,0) -- (3,1.7321);
+                \draw (3,1.7321) -- (0,3.4641);
+                \draw (0,3.4641) -- (0,0);
+                \draw (2,0) -- (2,3.4641);
+                \draw (2,3.4641) -- (-1,1.7321);
+                \draw (-1,1.72,0) -- (2,0);
+        
+                \filldraw (0,0) circle (2pt);
+                \filldraw (2,0) circle (2pt);
+                \filldraw (3,1.7321) circle (2pt);
+                \filldraw (2,3.4641) circle (2pt);
+                \filldraw (0,3.4641) circle (2pt);
+                \filldraw (-1,1.7321) circle (2pt);
+            \end{tikzpicture}
+        
+        \end{center}  
+    \end{figure}
+    
+\end{frame}
 
 \begin{frame}
     \frametitle{A motivational example}
@@ -93,9 +200,12 @@
                 \draw [blue] (3,1.7321) -- (-1,1.7321);
                 \draw [blue] (2,0) -- (0,3.4641);
         
-                \draw [red] (3,1.7321) -- (0,3.4641);
-                \draw [red] (2,3.4641) -- (-1,1.7321);
-                \draw [red] (-1,1.72,0) -- (2,0);
+                \draw (0,0) -- (3,1.7321);
+                \draw (3,1.7321) -- (0,3.4641);
+                \draw (0,3.4641) -- (0,0);
+                \draw (2,0) -- (2,3.4641);
+                \draw (2,3.4641) -- (-1,1.7321);
+                \draw (-1,1.72,0) -- (2,0);
         
                 \filldraw (0,0) circle (2pt);
                 \filldraw (2,0) circle (2pt);
@@ -105,7 +215,79 @@
                 \filldraw (-1,1.7321) circle (2pt);
             \end{tikzpicture}
         
-        \end{center}       
+        \end{center}  
+    \end{figure}
+    
+\end{frame}
+
+\begin{frame}
+    \frametitle{A motivational example}
+
+    \begin{figure}[h]
+        \begin{center}
+            \begin{tikzpicture}
+                \draw [blue] (0,0) -- (2,0);
+                \draw [blue] (2,0) -- (3,1.7321);
+                \draw [blue] (3,1.7321) -- (2,3.4641);
+                \draw [blue] (2,3.4641) -- (0,3.4641);
+                \draw [blue] (0,3.4641) -- (-1,1.7321);
+                \draw [blue] (-1,1.7321) -- (0,0);
+                \draw [blue] (0,0) -- (2,3.4641);
+                \draw [blue] (3,1.7321) -- (-1,1.7321);
+                \draw [blue] (2,0) -- (0,3.4641);
+        
+                \draw [red] (0,0) -- (3,1.7321);
+                \draw [red] (3,1.7321) -- (0,3.4641);
+                \draw (0,3.4641) -- (0,0);
+                \draw (2,0) -- (2,3.4641);
+                \draw (2,3.4641) -- (-1,1.7321);
+                \draw (-1,1.72,0) -- (2,0);
+        
+                \filldraw (0,0) circle (2pt);
+                \filldraw (2,0) circle (2pt);
+                \filldraw (3,1.7321) circle (2pt);
+                \filldraw (2,3.4641) circle (2pt);
+                \filldraw (0,3.4641) circle (2pt);
+                \filldraw (-1,1.7321) circle (2pt);
+            \end{tikzpicture}
+        
+        \end{center}  
+    \end{figure}
+    
+\end{frame}
+
+\begin{frame}
+    \frametitle{A motivational example}
+
+    \begin{figure}[h]
+        \begin{center}
+            \begin{tikzpicture}
+                \draw [blue] (0,0) -- (2,0);
+                \draw [blue] (2,0) -- (3,1.7321);
+                \draw [blue] (3,1.7321) -- (2,3.4641);
+                \draw [blue] (2,3.4641) -- (0,3.4641);
+                \draw [blue] (0,3.4641) -- (-1,1.7321);
+                \draw [blue] (-1,1.7321) -- (0,0);
+                \draw [blue] (0,0) -- (2,3.4641);
+                \draw [blue] (3,1.7321) -- (-1,1.7321);
+                \draw [blue] (2,0) -- (0,3.4641);
+        
+                \draw [red] (0,0) -- (3,1.7321);
+                \draw [red] (3,1.7321) -- (0,3.4641);
+                \draw [red] (0,3.4641) -- (0,0);
+                \draw [red] (2,0) -- (2,3.4641);
+                \draw (2,3.4641) -- (-1,1.7321);
+                \draw (-1,1.72,0) -- (2,0);
+        
+                \filldraw (0,0) circle (2pt);
+                \filldraw (2,0) circle (2pt);
+                \filldraw (3,1.7321) circle (2pt);
+                \filldraw (2,3.4641) circle (2pt);
+                \filldraw (0,3.4641) circle (2pt);
+                \filldraw (-1,1.7321) circle (2pt);
+            \end{tikzpicture}
+        
+        \end{center}  
     \end{figure}
     
 \end{frame} 
@@ -147,8 +329,12 @@
     
 \end{frame} 
 
-%Notice that if adding a seventh vertex does not affect the existence of the monochromatic 
-%triangles. In fact adding any number of vertices to graph doesn't affect this. 
+%When we've coloured all the edges, we find that we get 2 red triangles. In fact, 
+%no matter how we colour the edges, Ramsey's theorem 
+%states that we will always get red triangles or blue triangles.
+
+%Notice that adding a any number of vertices does not affect the existence of the monochromatic 
+%triangles.
 %However, if we take a vertex away from the graph and consider the edge colouring 
 %shown here, we can't find any red or blue triangles.
 
@@ -185,7 +371,7 @@
 \end{frame}
 
 %So we have found that 6 is minimum 
-%number of vertices needed in to ensure the existence of monochromatic triangles. This motivates 
+%number of vertices of a graph needed in to ensure the existence of monochromatic triangles. This motivates 
 %the definition of Ramsey numbers.
 %
 %First some definitions:
@@ -194,10 +380,10 @@
     \frametitle{Definitions}
 
     \begin{definition}[Colouring]
-    By \textit{$r$-colouring} of a graph $G=(V,E)$, we mean a partition of the edges $E$ 
-    induced by the map 
+    An \textit{$r$-colouring} of a graph $G=(V,E)$, is a partition of the edges $E$ 
+    into $r$ disjoint classes, which is induced by the map 
     $$\chi: E \to \{1,2,\ldots,r\},\text{     for } r\in\Z^+.$$
-    We say a subset of edges $E'\subset E$ is monochromatic if the restriction 
+    We say a subset of edges $E'\subset E$ is \textit{monochromatic} if the restriction 
     $\chi|_{E'}$ is the constant map.
     \end{definition}
 \end{frame}
@@ -206,16 +392,15 @@
     \frametitle{Definitions}
 
     \begin{definition}[Colouring]
-    By \textit{$r$-colouring} of a graph $G=(V,E)$, we mean a partition of the edges $E$ 
-    induced by the map 
-    $$\chi: E \to \{1,2,\ldots,r\},\text{     for } r\in\Z^+.$$
-    We say a subset of edges $E'\subset E$ is monochromatic if the restriction 
-    $\chi|_{E'}$ is the constant map.
+        An \textit{$r$-colouring} of a graph $G=(V,E)$, is a partition of the edges $E$ 
+        into $r$ disjoint classes, which is induced by the map 
+        $$\chi: E \to \{1,2,\ldots,r\},\text{     for } r\in\Z^+.$$
+        We say a subset of edges $E'\subset E$ is \textit{monochromatic} if the restriction 
+        $\chi|_{E'}$ is the constant map.
     \end{definition}
     \begin{definition}[Complete graph]
     We say a graph is \textit{complete} if every two vertices are joined by an edge. 
-    We denote the complete graph of order $n$ $K_n$, where the order of a graph is 
-    the number of vertices. 
+    We denote the complete graph of order $n$ by $K_n$.
     \end{definition}
 \end{frame}
 
@@ -249,6 +434,8 @@
 
     \begin{prop}
     $R(s,t)$ is a well-defined function for all $s,t\in\Z^+.$
+    %i.e. for any red-blue colouring of a complete graph of order at least 
+    %R(s,t), we can always find a monochromatic complete subgraph of order s or t
     \end{prop}
 
 \end{frame}
@@ -259,33 +446,38 @@
 \begin{frame}
     \frametitle{Generalisation to $r$ colours}
     \begin{definition}
-    For $s_1,\ldots,s_r\in\Z^+$, we define the $R(s_1,\ldots,s_r)$, 
-    to be the least positive integer such that any r-colouring of $K_n$ contains
-    as a subgraph a monochromatic $K_{s_i}$ whenever 
+    For $s_1,\ldots,s_r\in\Z^+$, we define $R(s_1,\ldots,s_r)$ 
+    to be the least positive integer such that any $r$-colouring of $K_n$ contains 
+    a complete monochromatic subgraph $K_{s_i}$ whenever 
     $n\geq R(s_1,\ldots,s_r)$, for some $i\in\{1,\ldots,r\}$.\\
 
     For example, $R(3,3,3)=17$.
+    %17 is the minimum order of a complete graph such that when we colour the 
+    %edges with 3 colours, we always get a monochromatic triangle
     \end{definition}
 \end{frame}
 
 \begin{frame}
     \frametitle{Generalisation to $r$ colours}
     \begin{definition}
-    For $s_1,\ldots,s_r\in\Z^+$, we define the $R(s_1,\ldots,s_r)$, 
-    to be the least positive integer such that any r-colouring of $K_n$ contains
-    as a subgraph a monochromatic $K_{s_i}$ whenever 
+    For $s_1,\ldots,s_r\in\Z^+$, we define $R(s_1,\ldots,s_r)$ 
+    to be the least positive integer such that any r-colouring of $K_n$ contains 
+    a complete monochromatic subgraph $K_{s_i}$ whenever 
     $n\geq R(s_1,\ldots,s_r)$, for some $i\in\{1,\ldots,r\}$.\\
 
     For example, $R(3,3,3)=17$.
     \end{definition}
     \begin{theorem}
         $R(s_1,\ldots,s_r)$ is a well-defined function for all $s_1,\ldots,s_r\in\Z^+.$
+        %i.e. for any set of positive integers s_i, for any r colouring of a complete 
+        %graph of order at least R(s_1,\ldots,s_r), we can always find a monochromatic
+        %complete subgraph of order s_i, for some i.
     \end{theorem}
 \end{frame}
 
-%The statement of Ramsey's theorem in the introduction
-%concerns partitioning a countably infinite set $\Gamma$ into $r$ disjoint 
-%subsets, where $r\in\Z^+$.
+%The statement of Ramsey's original theorem 
+%concerns partitioning a countably infinite set into a finite number of 
+%disjoint subsets
 
 \begin{frame}
     \frametitle{Infinite Graphs}
@@ -294,7 +486,7 @@
         Let $\Gamma$ be a countably infinite set. We define the 
         \textit{infinite complete graph}, $K_\infty$, as the ordered pair 
         $K_\infty:=(\Gamma,\Gamma^{(2)})$.\\
-        
+
         Here, $\Gamma^{(2)}$ is the set of all the edges joining each vertex in 
         $\Gamma$ to every other vertex.
     
@@ -308,7 +500,7 @@
         Let $\Gamma$ be a countably infinite set. We define the 
         \textit{infinite complete graph}, $K_\infty$, as the ordered pair 
         $K_\infty:=(\Gamma,\Gamma^{(2)})$.\\
-        
+
         Here, $\Gamma^{(2)}$ is the set of all the edges joining each vertex in 
         $\Gamma$ to every other vertex.
     
