@@ -121,7 +121,7 @@ sense.
 \begin{prop}\label{prop:ram}
 
     $R(s,t)$ is a well-defined function for all $s,t\in\Z^+$, and
-    $$R(s,t)\leq R(s-1,t)+R(s,t-1)$$
+    $$R(s,t)\leq R(s-1,t)+R(s,t-1).$$
 \end{prop}
 
 \textbf{Remark:} If $\chi$ is a 2-colouring of $K_n$, I will refer 
@@ -206,7 +206,7 @@ configurations of $K_5$.\\
 
 Greenwood and Gleason also showed that $R_3(3,3,3)=17$, i.e. every complete graph 
 of order at least 17 has a monochromatic $K_3$, when coloured with 
-three colours. In fact, \autoref{prop:ram} holds for any finite $r$-colouring:
+three colours. In fact, \autoref{prop:ram} holds for any finite $r$-colouring.
 
 \begin{theorem} \label{thr:ram2}
 
@@ -228,8 +228,8 @@ three colours. In fact, \autoref{prop:ram} holds for any finite $r$-colouring:
     coloured with the new colour. I.e. in the original colouring this $K_m$ is 
     coloured with the first two original colours. In the first case we are done,
     and in the second, for $i=1$ or 2, we can find a monochromatic $K_{s_i}$ in
-    $K_m$ coloured in $K_m$ coloured with the $i^{\text{th}}$ colour. Hence,
-    $$R_r(s_1,\ldots,s_r)\leq R_{r-1}(R(s_1,s_2),s_3,\ldots,s_r)$$
+    $K_m$ coloured in $K_m$ coloured with the $i^{\text{th}}$ colour. Hence, \cite{Bollobas1998}
+    $$R_r(s_1,\ldots,s_r)\leq R_{r-1}(R(s_1,s_2),s_3,\ldots,s_r).$$
 
 \end{proof}
 
@@ -281,9 +281,9 @@ The statement of Ramsey's theorem in the introduction
 concerns partitioning a countably infinite set $\Gamma$ into $r$ disjoint 
 subsets, where $r\in\Z^+$.
 
-\begin{definition}[Infinite graph]
+\begin{definition}[Infinite complete graph]
 
-    We define the infinite complete graph, $K_\infty$, as the ordered pair
+    We define the \textit{infinite complete graph}, $K_\infty$, as the ordered pair
     $K_\infty:=(\Gamma,\Gamma^{(2)})$.
 
 \end{definition}
