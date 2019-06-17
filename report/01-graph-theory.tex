@@ -145,11 +145,11 @@ and the edges $\chi^{-1}\{2\}$ as being `blue'.
 
     Let $n_1 = |T_1|$ and $n_2 = |T_2|$. Then $n_1 + n_2 + 1 = R(s-1,t)+R(s,t-1)$.
     If $n_1 < R(s-1,t)$, then $n_2 \geq R(s,t-1)$, so $T_2$ contains either a 
-    red $K_s$, or a blue $K_{t-1}$. If the former holds then we are done, and if the latter holds then $K_{t-1}\cup\{x\}$ 
-    forms a blue clique $K_t$, and the inequality is established.\\
+    red $K_s$, or a blue $K_{t-1}$. If the former holds then we are done, and if the latter holds then $K_{t-1}$ 
+    forms a blue clique, $K_t$, with $\{x\}$ and the inequality is established.\\
     If instead $n_1\geq R(s-1,t)$, then $T_1$ contains either a red $K_{s-1}$, or 
     a blue $K_t$. If the latter holds then we are done, and if the former holds 
-    then $K_{s-1}\cup\{x\}$ form a red clique $K_s$.\cite{Greenwood1955}
+    then $K_{s-1}$ forms a red clique, $K_s$, with $\{x\}$.\cite{Greenwood1955}
 \end{proof}
 
 I now return to example presented earlier:
@@ -210,7 +210,7 @@ three colours. In fact, \autoref{prop:ram} holds for any finite $r$-colouring.
 
 \begin{theorem} \label{thr:ram2}
 
-    Given $r$ positive integers, $s_1, s_2,\ldots, s_r$, there exist a least
+    Given $r\in\Z^+$ positive integers, $s_1, s_2,\ldots, s_r$, there exist a least
     positive integer, $R_r(s_1,\ldots,s_r)$, such that any r-colouring of $K_n$ with 
     $n\geq R_r(s_1,\ldots,s_r)$ contains, as a clique, a monochromatic $K_{s_i}$
     for some $i\in\{1,\ldots r\}$, coloured by the $i^{\text{th}}$ colour.\label{thr:genRamsey}
@@ -220,17 +220,16 @@ three colours. In fact, \autoref{prop:ram} holds for any finite $r$-colouring.
 \begin{proof}
 
     We again proceed by induction on $r$. The base case for $R_2(s_1,s_2)$ is
-    true by the previous theorem. So we assume by induction that
+    true by \autoref{prop:ram}. So we assume by induction that
     $R_{r-1}(s_1,\ldots ,s_{r-1})$ exists. Then in any $r$-colouring of $K_n$ we 
-    replace the first two colours by a new colour. If $n$ is sufficiently large,
-    then either there is a $K_{s_1}$ coloured with the $i^{\text{th}}$ colour for
-    some $i \in \{3,\ldots,r\}$, or else for $m=R(s_1,s_2)$ there is a $K_m$
-    coloured with the new colour. I.e. in the original colouring this $K_m$ is 
-    coloured with the first two original colours. In the first case we are done,
-    and in the second, for $i=1$ or 2, we can find a monochromatic $K_{s_i}$ in
-    $K_m$ coloured in $K_m$ coloured with the $i^{\text{th}}$ colour. Hence, \cite{Bollobas1998}
-    $$R_r(s_1,\ldots,s_r)\leq R_{r-1}(R(s_1,s_2),s_3,\ldots,s_r).$$
-
+    replace the first two colours by a new colour. So long as $n$ is large enough,
+    either there is a $K_{s_i}$ coloured with the $i^{\text{th}}$ colour for
+    some $i \in \{3,\ldots,r\}$ as a clique of $K_n$, or there is a clique $K_m$
+    coloured with the new colour, with $m=R(s_1,s_2)$. 
+    If the former holds, then we have our monochromatic clique. And if the latter holds, then 
+    we have either a monochromatic $K_{s_1}$ or a monochromatic $K_{s_2}$ as a clique of $K_m$ by \autoref{prop:ram}, 
+    since $K_m$ is coloured by the first two colours of the original colouring.
+    And so we are done by induction, since $K_m\subset K_n$.\cite{Bollobas1998}
 \end{proof}
 
 Whilst we have been discussing Ramsey's theorem in a strictly graph-theoretical sense,
@@ -242,7 +241,7 @@ for any $k,r\in\Z^+$.
 
 \begin{theorem}[Ramsey (finite version)] \label{thr:hyper}
 
-    Given $r$ positive integers, $s_1, s_2,\ldots, s_r$, such that $1<k<\text{min}\{s_1\ldots s_r\}$, there exist a least
+    Given $r\in\Z^+$ positive integers, $s_1, s_2,\ldots, s_r$, such that $1<k<\text{min}\{s_1\ldots s_r\}$, there exist a least
     positive integer, $R_r^{(k)}(s_1,\ldots,s_r)$, such that any $r$-colouring of $[n]^{(k)}$ 
     with $n\geq R_r^{(k)}(s_1,\ldots,s_r)$ contains, as a clique, a monochromatic 
     $[s_i]^{(k)}$ for some $i\in\{1,\ldots ,r\}$, coloured by the $i^{\text{th}}$ colour.  \cite{Ramsey1930}
@@ -251,28 +250,25 @@ for any $k,r\in\Z^+$.
 
 \begin{proof}
     For simplicity will consider the case $r=2$. The proof is very similar to the 
-    one for \autoref{prop:ram}, in that we use double induction on $s$ and $t$. 
+    one for \autoref{prop:ram}, and we will use triple induction on $s,t,k\in\Z^+$. 
     We will assume that both $R^{(k)}(s-1,t)$ and $R^{(k)}(s,t-1)$ exist, and 
     also $R^{(k-1)}(u,v)$ exists for all $u,v\in\Z^+$.\\
 
     Let $X$ be a set with $R^{(k-1)}(R^{(k)}(s-1,t),R^{(k)}(s,t-1))+1$ elements.
-    Given any 2-colouring $\chi:X^{(k)}\to [2]$, choose any $x\in X$ and define 
+    We fix a 2-colouring $\chi:X^{(k)}\to [2]$ and an $x\in X$, and define 
     another 2-colouring $\chi':Y^{(k-1)}\to [2]$, where $Y=X\setminus\{x\}$, 
     given by $\chi'(\sigma) = \chi(\sigma\cup\{x\})$ for all $\sigma\in Y^{(k-1)}$. 
     By the definition of $R^{(k-1)}(u,v)$, we assume that $Y$ has a red (for $\chi'$) 
-    subset $Z$ with $R^{(k)}(s-1,t)$\\
+    subset $Z$ with $R^{(k)}(s-1,t)$ elements.\\
 
-    Now we look at the restriction $\chi|_{Z^{(k)}}$. If it has a blue $t$-set, 
-    then we are done, since $Z^{(k)}\subset X^{(k)}$, so a blue $t$-set of $Z$ 
-    certainly also has a blue $t$-set of $X$. On the other hand, if there is no 
-    blue $t$-set of $Z$ then there is a red $(s-1)$-set. The union of this red 
-    $(s-1)$-set with $\{x\}$ is then a red $s$-set of $X$, since $\{x\}\cup\sigma$ 
-    is red $\sigma\in Z^{(k-1)}$.\cite{Bollobas1998}
+    Since $|Z|=R^{(k)}(s-1,t)$, then there is either a blue (for $\chi$) subset of $Z$ of size $t$, or  
+    a red subset of size $s-1$. If the former holds, then we are done since $Z^{(k)}\subset X^{(k)}$. 
+    If the latter holds, then we have a red subset of size $s-1$ which forms a red clique $K_s$ with $\{x\}$, since $\{x\}\cup\sigma$ 
+    is red for all $\sigma\in Z^{(k-1)}$.\cite{Bollobas1998}
 \end{proof}
 
-\textbf{Remark}: We use the colour-grouping argument described in the proof of 
-\autoref{thr:ram2} to prove that \autoref{thr:hyper} is in fact true for 
-$r$-colourings. That is, $R_r^{(k)}(s_1,\ldots,s_r)$ exists.
+\textbf{Remark}: We can use the same argument to prove that \autoref{thr:hyper} is in fact true for 
+$r$-colourings. That is, $R_r^{(k)}(s_1,\ldots,s_r)$ exists. We now consider the case of infinite graphs.
 
 \subsection{Infinite Graphs}
 \label{sec:1.2}
@@ -306,23 +302,23 @@ subset $\Delta \subset \Gamma$.
 
 \begin{proof}
 
-    Fix an arbitrary $a_1 \in \Z^+$. Then by the pigeonhole principal, 
-    there must exist a countably infinite set $\mathcal{B}_1\subseteq\Z_+\setminus
-    \{a_1\}$ such that all of the $a_1-\mathcal{B}_1$ edges (i.e. edges of the
-    form $(a_1,b_1)$ with $b_1\in\mathcal{B}_1$ are of the same colour, say $c_1$.\\
+    Fix an $r$-colouring of $K_\infty$ and $a_1 \in \Gamma$. Then by the pigeonhole principal, 
+    there must exist a countably infinite set $S_1\subset\Gamma\setminus
+    \{a_1\}$ such that all of the $a_1-S_1$ edges are of the same colour, say $c_1$. In other words, 
+    $$S_1=\{x\in\Gamma\setminus\{a_1\}:\chi(\{a_1,x\})=c_1\}$$
 
-    Now again fix an arbitrary $a_2\in\mathcal{B}_1$. Again, we find some countable
-    $\mathcal{B}_2\subseteq\mathcal{B}_1$ such that all of the $a_2-\mathcal{B}_2$
+    Now again fix an arbitrary $a_2\in S_1$. Again, we find some countable
+    $S_2\subset S_1$ such that all of the $a_2-S_2$
     are of the same colour, say $c_2$.\\
 
     If we repeat this inductively, we obtain a sequence $a_1,a_2,\ldots$ 
     and a sequence of colours $c_1,c_2,\ldots$ such that $\chi(\{a_i,a_j\})=
     c_i$, for $i<j$.\\
 
-    Now again by the pigeonhole principal, since there are finitely many colours,
+    Now by the pigeonhole principal again, since there are finitely many colours,
     there exists an countable subsequence $c_{i_1}, c_{i_2}, \ldots$ that is 
-    constant, i.e. each term is equal to $c_i$. Then $\{a_{i_1},a_{i_2}, \ldots\}$ is a
-    monochromatic set, coloured by $c_i$.\cite{Narayana2017}
+    constant, i.e. each term is equal to $c_i$. Then $\{a_{i_1},a_{i_2}, \ldots\}$ is an infinite
+    monochromatic subset, coloured by $c_i$.\cite{Narayana2017}
 
 \end{proof}
 
@@ -339,7 +335,7 @@ a convergent subsequence.
     We define a 2-colouring of ${\Z^+}^{(2)}$ by calling $\{i,j\}$ \textit{red} 
     if $x_i <x_j$, and \textit{blue} if $x_i\geq x_j$.
 
-    Then Ramsey's theorem for infinite graphs gives us a countably infinite monochromatic 
+    Then \autoref{thr:ram} gives us a countably infinite monochromatic 
     set, which in this case is a monotone subsequence of $(x_i)$. And since it 
     is bounded, by the monotone convergence theorem it must converge.\cite{Narayana2017}
 
@@ -372,33 +368,32 @@ Ramsey theory.
     Let $nK_3$ be the graph consisting of $n\geq2$ disjoint triangles $K_3$. Then every 
     2-colouring of $K_r$ has a monochromatic $nK_3$ whenever $r\geq5n$. In other 
     words,\cite{Graham1990}
-    $$r(nK_3)=5n\qquad \text{for  } n\geq2.$$
+    $$r(nK_3)=5n\qquad \text{for  } n\geq1.$$
 \end{theorem}
 
 \begin{proof}
-    Notice that for $n=1$, we already know that $r(K_3)=R(3,3)=6$. We first show 
+    Notice that for $n=1$, $r(K_3)=R(3,3)=6>5$. Now we first show 
     that $r(nK_3)\geq5n$. Consider the 2-colouring of $K_{5n-1}$ in which we 
-    form red triangles from $3n-1$ vertices, blue triangles from the remaining $2n$ vertices, 
-    and colour every other edge blue. The only monochromatic triangles here are 
+    form red triangles from any $3n-1$ vertices, blue triangles from the remaining $2n$ vertices, 
+    and colour every other edge blue. Then the only monochromatic triangles here are 
     non-disjoint, so this colouring contains no monochromatic $nK_3$, and 
     so $r(nK_3)>5n-1$.\\
 
-    Now we show, by induction on $n$, that $r(nK_3)\leq5n$ for $n\geq2$. The base 
+    We now show that $r(nK_3)\leq5n$ for $n\geq2$, by induction on $n$. The base 
     case $n=2$ requires detailed and unenlightening analysis, which we omit. Now fix 
     an arbitrary 2-colouring of $K_{5n}$, for $n\geq3$.
-    We may find $\frac{5n-5}{3}$ disjoint monochromatic triangles by 
-    simply selecting triangles until fewer than six vertices remain. As 
-    $\frac{5n-5}{3}\geq n$, we may assume that at least one of these triangles 
-    is in each colour, say $\{1,2,3\}$ is coloured red and $\{4,5,6\}$ is coloured 
-    blue.\\
+    We can find $\frac{5n-5}{3}$ disjoint monochromatic triangles by 
+    simply selecting triangles from $K_{5n}$, until less than six vertices remain (since $R(3,3)=6$). Since 
+    $\frac{5n-5}{3}\geq n$, we can assume that one of these triangles is monochromatic,
+    say $\{1,2,3\}$ is red and $\{4,5,6\}$ is blue.\\
 
-    By `bow-tie' we mean a pair of triangles of different colours that share a 
-    single common vertex. Assume, by symmetry, that at least five of the edges 
-    between $\{1,2,3\}$ and $\{4,5,6\}$ are blue. Then at least one of 1,2,3, say 1, 
-    is joined by blue edges to at least two of 4,5,6, say 4 and 5, and 
-    $\{1,2,3,4,5\}$ forms a bow-tie. When these five points are removed, there exists, 
-    by induction, a monochromatic $(n-1)K_3$ on the remaining $5n-5$ points. This, 
-    together with the appropriate $K_3$ in the bow-tie, gives a monochromatic $nK_3$.
+    We assume, by symmetry, that at least five of the edges 
+    between $\{1,2,3\}$ and $\{4,5,6\}$ are blue. Then at least one of $\{1,2,3\}$, say 1, 
+    is joined by blue edges to at least two of $\{4,5,6\}$, say 4 and 5, and 
+    $\{1,2,3,4,5\}$ forms a bow-tie (by `bow-tie' we mean a pair of triangles of different colours that share a 
+    single common vertex). When these five vertices are removed, the remaining $5n-5$ vertices of $K_{5n}$
+    contain, by induction, a monochromatic $(n-1)K_3$. This, 
+    together with a $K_3$ of the same colour from the bow-tie, forms a monochromatic $nK_3$.
     \cite{Graham1990}
 \end{proof}
 
