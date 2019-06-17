@@ -47,10 +47,9 @@ red triangles.
 \caption{2 red triangles within a graph of 6 vertices}
 \end{figure}
 
-Before continuing, we first need to state some notation and definitions\cite{Graham1990}.
+Before continuing, we first need to state some notation and definitions \cite{Graham1990}.
 
-For $n,k\in \Z^+$, and any non-empty set $X$, let
-
+For $n,k\in \Z^+$, the set of positive integers, and any non-empty set $X$, let
 \begin{align*}%\label{eq:bracketDef}
 [n] &= \{1, 2,\ldots, n\},\\
 X^{(k)} &= \{Y:Y\subseteq X, |Y|=k\}.
@@ -88,13 +87,13 @@ following definition helps explain this:
 
 \begin{definition}[Colouring of a set]
 
-    Let $X$ be a non-empty set. For $r\in\Z^+$, a $r$-\textit{colouring} of $X$ is a 
+    Let $X$ be a non-empty set. For $r\in\Z^+$, an $r$-\textit{colouring} of $X$ is a 
     partition of $X$ into $r$ equivalence classes.
     
     Equivalently, a $r$-colouring of $X$ is the partition of $X$ induced by an 
     arbitrary map: $$\chi: X \to [r]$$ through the equivalence relation: 
     $$\mathcal{R}_{\chi}:= \{(x_{1},x_{2})\in X | \chi(x_{1})=\chi(x_{2}) \}$$
-    and $\chi$ is called the colouring function. Somewhat improperly, 
+    Here $\chi$ is called the colouring function. Somewhat improperly, 
     we will identify a $r$-colouring of $X$ with its colouring function.
 
     In the context of graphs, an $r$-colouring of a graph $G=(V,E)$ is a map \cite{Graham1990}:
@@ -110,7 +109,7 @@ following definition helps explain this:
 
     For $s,t\in\Z^+$, we define the \textit{Ramsey number} of $s$ and $t$, $R(s,t)$, 
     to be the least positive integer such that any 2-colouring of $K_n$ contains
-    as a clique either a monochromatic $K_s$ or a monochromatic $K_t$, whenever 
+    as a clique a monochromatic $K_s$ or a monochromatic $K_t$, whenever 
     $n\geq R(s,t)$.
 
 \end{definition}
@@ -124,17 +123,17 @@ sense.
     $$R(s,t)\leq R(s-1,t)+R(s,t-1).$$
 \end{prop}
 
-\textbf{Remark:} If $\chi$ is a 2-colouring of $K_n$, I will refer 
+\textbf{Remark:} If $\chi$ is a 2-colouring of $K_n$, I will from now on refer 
 to the edges $\chi^{-1}\{1\}$ as being `red',
 and the edges $\chi^{-1}\{2\}$ as being `blue'.
 
 \begin{proof}
     We proceed by double induction on $s$ and $t$. Note that $R(s,2) = R(2,s)=s$, 
     since a 2-colouring of $K_s$ either has a blue edge, or 
-    every other edge is red. \cite{Bollobas1998}\\
+    every other edge is red. Hence $R(s,2),R(2,s),R(t,2),R(2,t)$ all exist. \cite{Bollobas1998}\\
 
-    Hence $R(s,2),R(2,s),R(t,2),R(2,t)$ all exist. We now assume for an induction 
-    that $R(s,t-1)$ and $R(s-1,t)$ both exist. Let $n:=R(s-1,t)+R(s,t-1)$ and consider a
+    We now assume for an induction 
+    that $R(s,t-1)$ and $R(s-1,t)$ both exist. Let $n=R(s-1,t)+R(s,t-1)$ and consider any
     2-colouring of the edges of $K_n$. We need to show that we have
     either a red $K_s$ or a blue $K_t$. So let $x$ be any vertex of
     $K_n$, and let:
@@ -144,7 +143,7 @@ and the edges $\chi^{-1}\{2\}$ as being `blue'.
     \end{align*}  
 
     Let $n_1 = |T_1|$ and $n_2 = |T_2|$. Then $n_1 + n_2 + 1 = R(s-1,t)+R(s,t-1)$.
-    If $n_1 < R(s-1,t)$, then $n_2 \geq R(s,t-1)$, so $T_2$ contains either a 
+    If $n_1 < R(s-1,t)$, then $n_2 \geq R(s,t-1)$, so $T_2$ contains a 
     red $K_s$, or a blue $K_{t-1}$. If the former holds then we are done, and if the latter holds then $K_{t-1}$ 
     forms a blue clique, $K_t$, with $\{x\}$ and the inequality is established.\\
     If instead $n_1\geq R(s-1,t)$, then $T_1$ contains either a red $K_{s-1}$, or 
@@ -213,7 +212,7 @@ three colours. In fact, \autoref{prop:ram} holds for any finite $r$-colouring.
     Given $r\in\Z^+$ positive integers, $s_1, s_2,\ldots, s_r$, there exist a least
     positive integer, $R_r(s_1,\ldots,s_r)$, such that any r-colouring of $K_n$ with 
     $n\geq R_r(s_1,\ldots,s_r)$ contains, as a clique, a monochromatic $K_{s_i}$
-    for some $i\in\{1,\ldots r\}$, coloured by the $i^{\text{th}}$ colour.\label{thr:genRamsey}
+    for some $i\in\{1,\ldots ,r\}$, coloured by the $i^{\text{th}}$ colour.\label{thr:genRamsey}
 
 \end{theorem}
 
@@ -222,12 +221,12 @@ three colours. In fact, \autoref{prop:ram} holds for any finite $r$-colouring.
     We again proceed by induction on $r$. The base case for $R_2(s_1,s_2)$ is
     true by \autoref{prop:ram}. So we assume by induction that
     $R_{r-1}(s_1,\ldots ,s_{r-1})$ exists. Then in any $r$-colouring of $K_n$ we 
-    replace the first two colours by a new colour. So long as $n$ is large enough,
+    group the first two colours into a new colour. So long as $n$ is large enough,
     either there is a $K_{s_i}$ coloured with the $i^{\text{th}}$ colour for
     some $i \in \{3,\ldots,r\}$ as a clique of $K_n$, or there is a clique $K_m$
     coloured with the new colour, with $m=R(s_1,s_2)$. 
     If the former holds, then we have our monochromatic clique. And if the latter holds, then 
-    we have either a monochromatic $K_{s_1}$ or a monochromatic $K_{s_2}$ as a clique of $K_m$ by \autoref{prop:ram}, 
+    we have a monochromatic $K_{s_1}$ or a monochromatic $K_{s_2}$ as a clique of $K_m$ by \autoref{prop:ram}, 
     since $K_m$ is coloured by the first two colours of the original colouring.
     And so we are done by induction, since $K_m\subset K_n$.\cite{Bollobas1998}
 \end{proof}
@@ -241,7 +240,7 @@ for any $k,r\in\Z^+$.
 
 \begin{theorem}[Ramsey (finite version)] \label{thr:hyper}
 
-    Given $r\in\Z^+$ positive integers, $s_1, s_2,\ldots, s_r$, such that $1<k<\text{min}\{s_1\ldots s_r\}$, there exist a least
+    Given $r\in\Z^+$ positive integers, $s_1, s_2,\ldots, s_r$, such that $1<k<\text{min}\{s_1,\ldots, s_r\}$, there exist a least
     positive integer, $R_r^{(k)}(s_1,\ldots,s_r)$, such that any $r$-colouring of $[n]^{(k)}$ 
     with $n\geq R_r^{(k)}(s_1,\ldots,s_r)$ contains, as a clique, a monochromatic 
     $[s_i]^{(k)}$ for some $i\in\{1,\ldots ,r\}$, coloured by the $i^{\text{th}}$ colour.  \cite{Ramsey1930}
@@ -249,7 +248,7 @@ for any $k,r\in\Z^+$.
 \end{theorem}
 
 \begin{proof}
-    For simplicity will consider the case $r=2$. The proof is very similar to the 
+    For simplicity, we will just consider the case $r=2$. The proof is very similar to the 
     one for \autoref{prop:ram}, and we will use triple induction on $s,t,k\in\Z^+$. 
     We will assume that both $R^{(k)}(s-1,t)$ and $R^{(k)}(s,t-1)$ exist, and 
     also $R^{(k-1)}(u,v)$ exists for all $u,v\in\Z^+$.\\
@@ -305,7 +304,7 @@ subset $\Delta \subset \Gamma$.
     Fix an $r$-colouring of $K_\infty$ and $a_1 \in \Gamma$. Then by the pigeonhole principal, 
     there must exist a countably infinite set $S_1\subset\Gamma\setminus
     \{a_1\}$ such that all of the $a_1-S_1$ edges are of the same colour, say $c_1$. In other words, 
-    $$S_1=\{x\in\Gamma\setminus\{a_1\}:\chi(\{a_1,x\})=c_1\}$$
+    $$S_1=\{x\in\Gamma\setminus\{a_1\}:\chi(\{a_1,x\})=c_1\}\text{ is countable.}$$
 
     Now again fix an arbitrary $a_2\in S_1$. Again, we find some countable
     $S_2\subset S_1$ such that all of the $a_2-S_2$
@@ -360,7 +359,7 @@ graph $G$.
 \end{definition}
 
 Whilst the Ramsey theorems discussed so far, such as \autoref{thr:hyper} and 
-\autoref{thr:ram} do not easily extend to cover generalised Ramsey numbers, we 
+\autoref{thr:ram}, do not easily extend to cover generalised Ramsey numbers, we 
 give the following theorem as an elegant result in the emerging field of Graph 
 Ramsey theory.
 
@@ -368,11 +367,11 @@ Ramsey theory.
     Let $nK_3$ be the graph consisting of $n\geq2$ disjoint triangles $K_3$. Then every 
     2-colouring of $K_r$ has a monochromatic $nK_3$ whenever $r\geq5n$. In other 
     words,\cite{Graham1990}
-    $$r(nK_3)=5n\qquad \text{for  } n\geq1.$$
+    $$r(nK_3)=5n\qquad \text{for  } n\geq2.$$
 \end{theorem}
 
 \begin{proof}
-    Notice that for $n=1$, $r(K_3)=R(3,3)=6>5$. Now we first show 
+    We first show 
     that $r(nK_3)\geq5n$. Consider the 2-colouring of $K_{5n-1}$ in which we 
     form red triangles from any $3n-1$ vertices, blue triangles from the remaining $2n$ vertices, 
     and colour every other edge blue. Then the only monochromatic triangles here are 
@@ -398,6 +397,6 @@ Ramsey theory.
 \end{proof}
 
 \textbf{Remark}: This proof can be generalised to find the generalised Ramsey 
-numbers $r(sG,tG)$, for an arbitrary graph $G$ and $s,t\in\Z^+$. For example, if $s\geq t\geq1$, then,
+numbers $r(sG,tG)$ for an arbitrary graph $G$ and any $s,t\in\Z^+$. For example, if $s\geq t\geq1$, then,
 $$r(sK_2,tK_2)=2s+t-1,$$
 where $sK_2$ is the graph consisting of $s$ disjoint edges. \cite{Bollobas1998}
