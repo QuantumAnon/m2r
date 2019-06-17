@@ -3,11 +3,65 @@
 \begin{frame}
 \frametitle{RADO'S THEOREM}
 
-\tikzstyle{box}=[draw, fill=green!20, minimum size=2em]
-\begin{tikzpicture}
-  \node [box] (a) {Rado's Theorem};
-  \node [box] (a) [left of=a] {Rado's Theorem};
+\begin{definition}[Partition Regularity]
+
+  Let $\Lambda\in\mathbb{Q}^{m\times n}$. 
   
-\end{tikzpicture}
+  We say that $\Lambda$ is \emph{$k$-regular} over 
+$\mathbb{N}$ if, under any $k$-colouring of $\mathbb{N}$, there exists a 
+monochromatic $x\in\mathbb{N}^n$ such that $\Lambda x  = 0$.
+
+
+Then the matrix $\Lambda$ is \emph{partition regular} (PR) over 
+$\mathbb{N}$ if $\Lambda$ is $k$-regular over $\mathbb{N}$ for all $k$.
+
+\end{definition}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{RADO'S THEOREM}
+  
+\begin{definition}[Columns Property]
+  
+  A matrix $\Lambda = \begin{pmatrix}
+    g_{1} & \cdots & g_{n} 
+    \end{pmatrix}\in \mathbb{Q}^{m\times n}$ satisfies the \emph{columns property} (CP) 
+    if $[n]$ can be partitioned into a family of sets 
+    $$\Pi := \bigg\{\mathcal{C}_{1},\cdots,\mathcal{C}_{r}\bigg\}$$ such that:
+    
+    \begin{itemize}
+    \item $\sum\limits_{j\in\mathcal{C}_{1}}g_{j} = 0$
+    \item $\forall i \in [r]\setminus\{1\}$, $\sum\limits_{ j \in {\mathcal{C}_{i}}}g_{j} 
+    \in span \bigg\{g_{j} \ \bigg| \ j\in\bigcup\limits_{k \in [r]: k < i }\mathcal{C}_{k}\bigg\}$
+    \end{itemize}
+
+
+\end{definition}
+\end{frame}
+
+
+\begin{frame}{EUCLIDEAN RAMSEY THEORY}
+
+  \begin{definition}[Euclidean Ramsey Sets]
+    A finite set $F \in \mathbb{R}^m$ is \emph{Ramsey} if: 
+    \begin{center}
+    $\forall r\in\mathbb{N}$, $\exists n\in\mathbb{N}$ such that, 
+    under any $r$-colouring of $\mathbb{R}^n$,  there exists a monochromatic 
+    $E$ in $\mathbb{R}^n$ isometric to $F$.
+    \end{center}
+  \end{definition}
+  
+
+  
+  \begin{definition}[Spherical sets]
+
+  A set $F\in\mathbb{R}^m$ is spherical if there exists a sphere 
+  $S\in\mathbb{R}^m$ such that $F\subset S$. That is, there exist $z\in\mathbb{R}^m$
+  and $r\in\mathbb{R}^{+}$ such that: $$\forall x\in F, \ \ |x - z| = r$$
+  where $|\cdot|$ is the Euclidean norm in $\mathbb{R}^m$.
+  
+  \end{definition}
+
 
 \end{frame}
