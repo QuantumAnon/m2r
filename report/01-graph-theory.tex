@@ -162,8 +162,8 @@ I now return to example presented earlier:
     a contradiction that $R(3,3)=5$. Then for every 2-colouring of $K_5$, we should 
     be able to find a monochromatic $K_3$. However, if we consider the colouring 
     in which we colour the exterior edges of $K_5$ red, and the interior diagonal 
-    edges blue, shown in the graph below, we see that there are no red triangles
-    nor blue triangles,.
+    edges blue, shown in the graph below, we see that there are no red triangles,
+    nor blue triangles.
 
     \begin{figure}[h]
         \begin{center}
@@ -189,7 +189,7 @@ I now return to example presented earlier:
         
         \end{center}
         
-        \caption{A particular colouring of $K_5$}
+        \caption{A particular 2-colouring of $K_5$}
     \end{figure}
     We have our contradiction. Hence $R(3,3)=6$.\cite{Greenwood1955}
 \end{proof}
@@ -242,7 +242,7 @@ for any $k,r\in\Z^+$.
 
 \begin{theorem}[Ramsey (finite version)] \label{thr:hyper}
 
-    Given $r$ positive integers, $s_1, s_2,\ldots, s_r$, such that $1<k<\text\{min\}{s_1\ldots s_r}$, there exist a least
+    Given $r$ positive integers, $s_1, s_2,\ldots, s_r$, such that $1<k<\text{min}\{s_1\ldots s_r\}$, there exist a least
     positive integer, $R_r^{(k)}(s_1,\ldots,s_r)$, such that any $r$-colouring of $[n]^{(k)}$ 
     with $n\geq R_r^{(k)}(s_1,\ldots,s_r)$ contains, as a clique, a monochromatic 
     $[s_i]^{(k)}$ for some $i\in\{1,\ldots ,r\}$, coloured by the $i^{\text{th}}$ colour.  \cite{Ramsey1930}
@@ -277,7 +277,7 @@ $r$-colourings. That is, $R_r^{(k)}(s_1,\ldots,s_r)$ exists.
 \subsection{Infinite Graphs}
 \label{sec:1.2}
 
-The statement of Ramsey's theorem in the introduction, \cite{thr:Ramsey}
+The statement of Ramsey's theorem in the introduction
 concerns partitioning a countably infinite set $\Gamma$ into $r$ disjoint 
 subsets, where $r\in\Z^+$.
 
@@ -288,17 +288,17 @@ subsets, where $r\in\Z^+$.
 
 \end{definition}
 
-\begin{theorem}[Ramsey (infinite version)]\label{thm:ram}
+\begin{theorem}[Ramsey (infinite version)]\label{thr:ram}
 
     For any r-colouring of the edges of $K_\infty$, say
     $\chi :\Gamma^{(2)}\to\{c_1,\ldots, c_r\}$, there exists 
     within it a countably infinite monochromatic clique. In other words, there 
     exists $X \subset K_\infty$ such that $X$ is countably infinite, and $\chi|_{X^{(2)}}$ is the
-    constant function.
+    constant function.\cite{Narayana2017}
 
 \end{theorem}
 
-\textbf{Remark}: It should be noted that whilst \autoref{thm:ram} is referring to 
+\textbf{Remark}: It should be noted that whilst \autoref{thr:ram} is referring to 
 the edges of the infinite graph, $\Gamma^{(2)}$, Ramsey's original theorem states 
 that the same result holds for any $r$-colouring of $\Gamma^{(k)}$, for 
 any $k,r \in \Z^+$. That is, we can always find a countably infinite monochromatic 
@@ -326,7 +326,7 @@ subset $\Delta \subset \Gamma$.
 
 \end{proof}
 
-An interesting corollary of this result is the following fundamental theorem from 
+An interesting corollary of this result is the following key theorem from 
 analysis:
 
 \textbf{Corollary}: [Bolzano-Weierstrass Theorem]
@@ -345,56 +345,64 @@ a convergent subsequence.
 
 \end{proof}
 
+\subsection{Generalised Ramsey Numbers}
+\label{sec:1.3}
 
+The substructures that Ramsey numbers determine the existence of are the monochromatic 
+cliques $K_s$ which we have so far exclusively discussed. This section is concerned with generalising 
+the type of monochromatic substructure that we can assure the existence of, to an arbitrary 
+graph $G$.
 
-%\newdimen\R
-%\R=0.8cm
-%
-%\begin{tikzpicture}
-%    % Indicate the boundary of the regular polygons
-%    \draw [thin,black!20] circle (\R) ;
-%    \fill[black!20] circle (2pt);
-%    \draw (0:\R) \foreach \x in {120,240} {
-%            -- (\x:\R)
-%        } -- cycle (90:\R) node[above] {$n=3$} ;
-%    \draw[xshift=2.5\R] (0:\R) \foreach \x in {90,180,...,359} {
-%            -- (\x:\R)
-%        } -- cycle (90:\R) node[above] {$n=4$} ;
-%    \draw[xshift=5.0\R] (0:\R) \foreach \x in {72,144,...,359} {
-%            -- (\x:\R)
-%        } -- cycle (90:\R) node[above] {$n=5$} ;
-%    \begin{scope}[yshift=-3\R]
-%        \draw (0:\R) \foreach \x in {60,120,...,359} {
-%                -- (\x:\R)
-%            }-- cycle (90:\R) node[above] {$n=6$} ;
-%            
-%        % 360/7 = 51.4286 For PGF v < 1.18 we have to round to the nearest
-%        % integer. Newer version support fractional angle values.
-%        % For a more accurate result use the sequence
-%        % {51, 103, 154, 206, 257, 309}
-%        %
-%        \draw[xshift=2.5\R] (0:\R) \foreach \x in {51.4286,102.8571,...,359} {
-%                -- (\x:\R)
-%            }-- cycle (90:\R) node[above] {$n=7$} ;
-%        \draw[xshift=5.0\R] (0:\R) \foreach \x in {45,90,...,359} {
-%                -- (\x:\R)
-%            } -- cycle (90:\R) node[above] {$n=8$} ;
-%    \end{scope}
-%    \draw[yshift=-6.0\R] (0:\R) \foreach \x in {10,20,...,359} {
-%            -- (\x:\R)
-%        } -- cycle (90:\R) node[above] {$n=36$} ;
-%\end{tikzpicture}
-%
-%
-%
-%%\subsection{Graph Ramsey Theory \cite{Bollobas1998}}
-%%\label{sec:1.3}
-%%
-%%\begin{definition}[Isomorphism of Graphs]
-%%
-%%\end{definition}
-%%
-%\begin{definition}[Generalised Ramsey Number]
-%
-%\end{definition}
-    
+\begin{definition}[Generalised Ramsey number]
+    Let $G$ be an arbitrary graph. We define the \textit{generalised 
+    Ramsey number}, $r(G)$, to be the minimal $n\in\Z^+$ such that every 2-colouring of $K_n$
+    contains a monochromatic $G$. \cite{Graham1990}
+
+    Note that $R(s,s)=r(K_s)$, since $R(s,s)$ is the minimal $n$ such that every 
+    2-colouring of $K_n$ contains as a clique a monochromatic $K_s$.
+
+\end{definition}
+
+Whilst the Ramsey theorems discussed so far, such as \autoref{thr:hyper} and 
+\autoref{thr:ram} do not easily extend to cover generalised Ramsey numbers, we 
+give the following theorem as an elegant result in the emerging field of Graph 
+Ramsey theory.
+
+\begin{theorem}
+    Let $nK_3$ be the graph consisting of $n\geq2$ disjoint triangles $K_3$. Then every 
+    2-colouring of $K_r$ has a monochromatic $nK_3$ whenever $r\geq5n$. In other 
+    words,\cite{Graham1990}
+    $$r(nK_3)=5n\qquad \text{for  } n\geq2.$$
+\end{theorem}
+
+\begin{proof}
+    Notice that for $n=1$, we already know that $r(K_3)=R(3,3)=6$. We first show 
+    that $r(nK_3)\geq5n$. Consider the 2-colouring of $K_{5n-1}$ in which we 
+    form red triangles from $3n-1$ vertices, blue triangles from the remaining $2n$ vertices, 
+    and colour every other edge blue. The only monochromatic triangles here are 
+    non-disjoint, so this colouring contains no monochromatic $nK_3$, and 
+    so $r(nK_3)>5n-1$.\\
+
+    Now we show, by induction on $n$, that $r(nK_3)\leq5n$ for $n\geq2$. The base 
+    case $n=2$ requires detailed and unenlightening analysis, which we omit. Now fix 
+    an arbitrary 2-colouring of $K_{5n}$, for $n\geq3$.
+    We may find $\frac{5n-5}{3}$ disjoint monochromatic triangles by 
+    simply selecting triangles until fewer than six vertices remain. As 
+    $\frac{5n-5}{3}\geq n$, we may assume that at least one of these triangles 
+    is in each colour, say $\{1,2,3\}$ is coloured red and $\{4,5,6\}$ is coloured 
+    blue.\\
+
+    By `bow-tie' we mean a pair of triangles of different colours that share a 
+    single common vertex. Assume, by symmetry, that at least five of the edges 
+    between $\{1,2,3\}$ and $\{4,5,6\}$ are blue. Then at least one of 1,2,3, say 1, 
+    is joined by blue edges to at least two of 4,5,6, say 4 and 5, and 
+    $\{1,2,3,4,5\}$ forms a bow-tie. When these five points are removed, there exists, 
+    by induction, a monochromatic $(n-1)K_3$ on the remaining $5n-5$ points. This, 
+    together with the appropriate $K_3$ in the bow-tie, gives a monochromatic $nK_3$.
+    \cite{Graham1990}
+\end{proof}
+
+\textbf{Remark}: This proof can be generalised to find the generalised Ramsey 
+numbers $r(sG,tG)$, for an arbitrary graph $G$ and $s,t\in\Z^+$. For example, if $s\geq t\geq1$, then,
+$$r(sK_2,tK_2)=2s+t-1,$$
+where $sK_2$ is the graph consisting of $s$ disjoint edges. \cite{Bollobas1998}
