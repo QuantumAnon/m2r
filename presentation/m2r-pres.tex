@@ -1,7 +1,6 @@
 \documentclass{beamer}
 \usepackage{subfiles}
 \usepackage{amssymb, amsmath, amsthm}
-\usepackage{enumitem}
 \usepackage{hyperref}
 \usepackage[normalem]{ulem}
 \usepackage{tikz}
@@ -33,19 +32,37 @@ sorting=ynt
 
 \theoremstyle{BreakBold}
 \newtheorem{prop}[theorem]{Proposition}
-\newtheorem{remark}{Remark}[section]
+\newtheorem*{remark}{Remark}
 \newtheorem*{cor}{Corollary}
 
+\usepackage{ifthen}
 \newcommand{\str}[1]{\mathbf{#1}}
-\newcommand{\rel}[2]{R^{#1}_{\str{#2}}}
+\newcommand{\rel}[2][\empty]{
+  \ifthenelse{\equal{#1}{}}
+  {R_{\mathbf{#2}}}
+  {R^{#1}_{\mathbf{#2}}}
+}
+
 \newcommand{\class}[1]{\mathcal{#1}}
 \newcommand{\Z}{\mathbb{Z}}
-\newcommand{\sstr}[2]{\binom{\str{#1}}{\str{#2}}}
+\newcommand{\sstr}[2]{\binom{\mathbf{#1}}{\mathbf{#2}}}
 \newcommand{\ramsSplit}[3]{(#1)^{#2}_{#3}}
 \newcommand{\radoArrow}[3]{\rightarrow\ramsSplit{#1}{#2}{#3}}
 \newcommand{\card}[1]{|#1|}
 \newcommand{\sumin}{_{\text{min}}}
 \newcommand{\sumax}{_{\text{max}}}
+
+\DeclareMathOperator{\age}{Age}
+\DeclareMathOperator{\aut}{Aut}
+\DeclareMathOperator{\prob}{Pr}
+\DeclareMathOperator{\adj}{Adj}
+\DeclareMathOperator{\spa}{span}
+
+\newcommand{\flo}{\class{R}^{\text{lo}}}
+\newcommand{\gra}{\mathrm{Gra}}
+\newcommand{\ogra}{\mathrm{Gra}_<}
+\newcommand{\rand}{\mathbf{G}^{\text{Ran}}}
+\newcommand{\orand}{\mathbf{G}^{\text{Ran}}_{<}}
 
 \author{
   Chaudhuri, Gautam\\
