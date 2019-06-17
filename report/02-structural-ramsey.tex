@@ -454,36 +454,37 @@ One approach is through the `amalgamation technique' of
 This is a combinatorial method that has been applied to many other structures
 with great success, which we now apply to this problem.
 
-We start with an auxiliary remark
+We start with an auxiliary remark,
 
 \begin{remark}
-  Let $\str{A},\str{B}\in\ogra$ such that $\str{A}\subseteq\str{B}$.\\
+  Let $\str{A},\str{B}\in\ogra$ such that $\str{A}\subseteq\str{B}$.
 
   Define $\str{B'}$ to be the natural structure for $\sstr{B}{A}$ given by
   contracting copies of $\str{A}$ in $\str{B}$ and adjoining edges
   appropriately.
 
-  Then $\str{C'}\radoArrow{B'}{A}{t} \implies \exists \str{C}\in\ogra :
-  \str{C}\radoArrow{B}{A}{t}$ by replacing  every $B'\in\sstr{C'}{B'}$ with a
+  Then $\str{C'}\radoArrow{\str{B'}}{\str{A}}{t} \implies \exists \str{C}\in\ogra :
+  \str{C}\radoArrow{\str{B}}{\str{A}}{t}$ by replacing  every $B'\in\sstr{C'}{B'}$ with a
   full copy of $B$.
 \end{remark}
 
 \begin{theorem}
   The class $\ogra$ is Ramsey.
 
-  \begin{proof}[proof\ sketch.]
+  \begin{proof}[Sketch of proof]
+    Choose $\str{A}, \str{B}\in \ogra$ where $\str{A}\subseteq\str{B}$.\\
     First notice that $\rel{B}$ can be divided into two partitions,
     $U = \{\vec{x}\in\rel{B} : \exists \str{A}\subseteq\str{B}, \vec{x}\in\rel{A}\}$
     and $V = \{\vec{x}\in\rel{B} : \forall \str{A}\subseteq\str{B},
     \neg(\vec{x}\in\rel{A})\}$.
 
     We use this fact to construct a $\str{C}\in\ogra$ which will satisfy
-    $\str{C}\radoArrow{B}{A}t$.
-    We state that $C\ni x_i \in B^N$ where $N$ is some, currently undetermined,
+    $\str{C}\radoArrow{\str{B}}{\str{A}}{t}$.
+    We let $x_i \in C$ take values in $B^N$ where $N$ is some, currently undetermined,
     positive integer.
     Define $\pi_j$ as projection onto the $j$-th index.
     By carefully choosing the elements of $\rel{C}$ and using our partitioning
-    result, we can ensure the following $\str{A'}\in\sstr{C}{A} \iff \forall i =
+    result, we can ensure the following: $\str{A'}\in\sstr{C}{A} \iff \forall i =
     1, \dots, N; \pi_i(\str{A'})\in\sstr{B}{A}$.
 
     We then write $\sstr{B}{A}$ as $\{\str{A}_1,\dots,\str{A}_r\}$ or
@@ -493,8 +494,8 @@ We start with an auxiliary remark
     Using the Hales-Jewett theorem, for any $t\in\Z^+$, we can find a $N\in\Z^+$
     such that any $t$-colouring of $R^N$ will contain a monochromatic line.
     By our construction this monochrome line gives us a monochrome line of
-    $\str{A}_i$ all of which are substructures of $\str{B}$ which completes the
-    proof.
+    $\str{A}_i$ all of which are substructures of $\str{B}$, i.e. we have a
+    monochrome $\sstr{B}{A}$ which completes the proof.
   \end{proof}
 \end{theorem}
 
@@ -506,26 +507,33 @@ One of the strongest results is that $\aut\orand$ is extremely amenable.
 \begin{definition}[$G$-flows and Extreme Amenability\cite{Kechris2005}]
   Let $G$ be a topological group and consider it acting on a compact Hausdorff
   topological space $X$, we call this action a $G$-flow on $X$.
-  If the flow admits no proper subgroups, i.e. every orbit on $X$ is dense in
+  If the flow admits no proper subgroups, i.e.\ every orbit on $X$ is dense in
   $X$, we call the flow \textit{minimal}.
   It can be shown that every topological group has a minimal flow, furthermore,
   there exists a largest minimal flow which surjects onto any other, we call
   this the \textit{universal} minimal flow of $G$.
   
-  If the universal minimal flow is a single point, we say $G$ is \textit{extremely amenable}.
+  If the universal minimal flow is a single point, i.e.\ it trivialises, we say $G$ is
+  \textit{extremely amenable}.
 \end{definition}
 
 The following result makes precise the correspondence between Ramsey classes and
 certain extremely amenable topological groups.
 
 \begin{theorem}[\citeauthor{Kechris2005}~\cite{Kechris2005}]
-  Let $\class{K}$ be a Fraïssé class and $\str{K}$ its limit.
+  Let $\class{K}$ be a Fraïssé class and $\str{K}$ its (countable) limit.
   Then the following are equivalent:
   \begin{itemize}
   \item $\class{K}$ is Ramsey.
   \item $\aut\str{K}$ is extremely amenable.
   \end{itemize}
 \end{theorem}
+
+\textcite{Kechris2005} go on to list several different types of Ramsey classes
+and their associated automorphism groups.
+They focus on topological groups which act on countable structures, yet this
+apparent restriction still yields a large number of distinct groups and
+topological spaces that arise from Ramsey structures.
 
 % LocalWords:  Ramsey subgraphs subgraph Fraïssé surjective Hausdorff
 
