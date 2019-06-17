@@ -1,1 +1,34 @@
 \documentclass[./m2r-pres.tex]{subfile}
+
+\begin{frame}
+\frametitle{The Hales-Jewett Theorem}
+\begin{itemize}[+]
+\item<1-> $A = \{1, 2, ..., n\}$, $\Omega_{A, k} = \{(a_1, a_2, ..., a_k) : a_i \in A\}$
+\item<2-> Roots: $\tau = (a_1, a_2, ..., a_{i-1}, x, a_{i+1}, ..., a_k) \in \Omega_{A \bigcup \{x\}, k} $
+\item<3-> $\tau(a) = (a_1, a_2, ..., a_{i-1}, a, a_{i+1}, ..., a_k) \in\Omega_{A \bigcup \{x\}, k} $
+\item<4-> $\tau = (1, 3, x, x), \tau(2) = (1, 3, 2, 2)$
+\item<5-> Combinatorial line: $\mathcal{L}_{\tau} = \{\tau(a) : a \in A\} \subset \Omega_{A, k}$
+\item<6-> e.g. $\{(1, 3, 1, 1), (1, 3, 2, 2), (1, 3, 3, 3)\}$
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{The Hales-Jewett Theorem}
+
+\begin{theorem} Given any size n of an alphabet $A = \{1, 2, ..., n\}$ and number of colours r, there exists an $N$ such that for any r-colouring of the set of N-words $\Omega_{A, N}$, there exists a monochromatic combinatorial line. 
+\end{theorem}
+\begin{itemize}
+\item<2-> Implies the Van der Waerden theorem: given any k and number of colours r, there exists an $N$ such that for any r-colouring of the set $\{1, 2, ..., N\}$, there is an monochromatic arithmetic sequence $\{a, a + d, ..., a + (k-1)d\}$ of length k.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{The Density Hales-Jewett Theorem}
+
+\begin{theorem} Given any size n of an alphabet $A = \{1, 2, ..., n\}$ and real number $\delta$, there exists an $N$ such that for any subset $B \subset \Omega_{A, N}$ of density $\delta$ there exists a combinatorial line.
+\end{theorem}
+\begin{itemize}
+\item<2-> Implies Szemeredi's theorem, a density analogue of Van der Waerden's theorem
+\end{itemize}
+\end{frame}
