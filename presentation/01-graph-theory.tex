@@ -1,12 +1,12 @@
 \documentclass[./m2r-pres.tex]{subfile}
 
-Consider the set of 6 points, and joining every point to 
-every other point. This called a complete graph. However we consider colouring 
-the edges either red or blue, shown here.
-
-When we've coloured all the edges, we find that we get 2 red triangles. In fact, 
-no matter how we allocate the red edges and the blue edges to 6 vertices, Ramsey's theorem 
-states that we will always get red triangles or blue triangles.
+%Consider the set of 6 points, and joining every point to 
+%every other point. This called a complete graph. However we consider colouring 
+%the edges either red or blue, shown here.
+%
+%When we've coloured all the edges, we find that we get 2 red triangles. In fact, 
+%no matter how we allocate the red edges and the blue edges to 6 vertices, Ramsey's theorem 
+%states that we will always get red triangles or blue triangles.
 
 \begin{frame}
     \frametitle{A motivational example}
@@ -147,10 +147,10 @@ states that we will always get red triangles or blue triangles.
     
 \end{frame} 
 
-Notice that if adding a seventh vertex does not affect the existence of the monochromatic 
-triangles. In fact adding any number of vertices to graph doesn't affect this. 
-However, if we take a vertex away from the graph and consider the edge colouring 
-shown here, we can't find any red or blue triangles.
+%Notice that if adding a seventh vertex does not affect the existence of the monochromatic 
+%triangles. In fact adding any number of vertices to graph doesn't affect this. 
+%However, if we take a vertex away from the graph and consider the edge colouring 
+%shown here, we can't find any red or blue triangles.
 
 \begin{frame}
     \frametitle{A pathological example}
@@ -179,60 +179,176 @@ shown here, we can't find any red or blue triangles.
         
         \end{center}
         
-        \caption{A particular 2-colouring of $K_5$}
+        \caption{A particular 2-colouring}
     \end{figure}
 
 \end{frame}
 
-So we have found that 6 is minimum 
-number of vertices needed in to ensure the existence of monochromatic triangles. This motivates 
-the definition of Ramsey numbers.
-
-First some definitions:
+%So we have found that 6 is minimum 
+%number of vertices needed in to ensure the existence of monochromatic triangles. This motivates 
+%the definition of Ramsey numbers.
+%
+%First some definitions:
 
 \begin{frame}
     \frametitle{Definitions}
 
+    \begin{definition}[Colouring]
     By \textit{$r$-colouring} of a graph $G=(V,E)$, we mean a partition of the edges $E$ 
     induced by the map 
-    $$\chi: E \to \{1,2,\ldots,r\},text{     for } r\in\Z^+.$$
+    $$\chi: E \to \{1,2,\ldots,r\},\text{     for } r\in\Z^+.$$
     We say a subset of edges $E'\subset E$ is monochromatic if the restriction 
     $\chi|_{E'}$ is the constant map.
-
-    We say a graph is \textit{complete} if every two vertices are joined by an edge. 
-    We denote the complete graph of order $n$ $K_n$, where the order of a graph is 
-    the number of vertices. 
+    \end{definition}
 \end{frame}
 
 \begin{frame}
-    \frametitle{Ramsey numbers}
+    \frametitle{Definitions}
+
+    \begin{definition}[Colouring]
+    By \textit{$r$-colouring} of a graph $G=(V,E)$, we mean a partition of the edges $E$ 
+    induced by the map 
+    $$\chi: E \to \{1,2,\ldots,r\},\text{     for } r\in\Z^+.$$
+    We say a subset of edges $E'\subset E$ is monochromatic if the restriction 
+    $\chi|_{E'}$ is the constant map.
+    \end{definition}
+    \begin{definition}[Complete graph]
+    We say a graph is \textit{complete} if every two vertices are joined by an edge. 
+    We denote the complete graph of order $n$ $K_n$, where the order of a graph is 
+    the number of vertices. 
+    \end{definition}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Ramsey's Theorem}
 
     \begin{definition}[Ramsey number]
 
         For $s,t\in\Z^+$, we define the \textit{Ramsey number} of $s$ and $t$, $R(s,t)$, 
         to be the least positive integer such that any 2-colouring of $K_n$ contains
         as a subgraph a monochromatic $K_s$ or a monochromatic $K_t$, whenever 
-        $n\geq R(s,t)$.
+        $n\geq R(s,t)$.\\
+
+        So $R(3,3)=6$. 
+    \end{definition}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Ramsey's Theorem}
+
+    \begin{definition}[Ramsey number]
+
+        For $s,t\in\Z^+$, we define the \textit{Ramsey number} of $s$ and $t$, $R(s,t)$, 
+        to be the least positive integer such that any 2-colouring of $K_n$ contains
+        as a subgraph a monochromatic $K_s$ or a monochromatic $K_t$, whenever 
+        $n\geq R(s,t)$.\\
+
+        So $R(3,3)=6$. 
+    \end{definition}
+
+    \begin{prop}
+    $R(s,t)$ is a well-defined function for all $s,t\in\Z^+.$
+    \end{prop}
+
+\end{frame}
+
+%In fact, we can colour the edges of a graph with any finite number of colours, 
+%and Ramsey's theorem still holds.
+
+\begin{frame}
+    \frametitle{Generalisation to $r$ colours}
+    \begin{definition}
+    For $s_1,\ldots,s_r\in\Z^+$, we define the $R(s_1,\ldots,s_r)$, 
+    to be the least positive integer such that any r-colouring of $K_n$ contains
+    as a subgraph a monochromatic $K_{s_i}$ whenever 
+    $n\geq R(s_1,\ldots,s_r)$, for some $i\in\{1,\ldots,r\}$.\\
+
+    For example, $R(3,3,3)=17$.
+    \end{definition}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Generalisation to $r$ colours}
+    \begin{definition}
+    For $s_1,\ldots,s_r\in\Z^+$, we define the $R(s_1,\ldots,s_r)$, 
+    to be the least positive integer such that any r-colouring of $K_n$ contains
+    as a subgraph a monochromatic $K_{s_i}$ whenever 
+    $n\geq R(s_1,\ldots,s_r)$, for some $i\in\{1,\ldots,r\}$.\\
+
+    For example, $R(3,3,3)=17$.
+    \end{definition}
+    \begin{theorem}
+        $R(s_1,\ldots,s_r)$ is a well-defined function for all $s_1,\ldots,s_r\in\Z^+.$
+    \end{theorem}
+\end{frame}
+
+%The statement of Ramsey's theorem in the introduction
+%concerns partitioning a countably infinite set $\Gamma$ into $r$ disjoint 
+%subsets, where $r\in\Z^+$.
+
+\begin{frame}
+    \frametitle{Infinite Graphs}
+    \begin{definition}[Infinite complete graph]
+
+        Let $\Gamma$ be a countably infinite set. We define the 
+        \textit{infinite complete graph}, $K_\infty$, as the ordered pair 
+        $K_\infty:=(\Gamma,\Gamma^{(2)})$.\\
+        
+        Here, $\Gamma^{(2)}$ is the set of all the edges joining each vertex in 
+        $\Gamma$ to every other vertex.
     
     \end{definition}
 \end{frame}
 
 \begin{frame}
-    \frametitle{Ramsey's theorem}
+    \frametitle{Infinite Graphs}
+    \begin{definition}[Infinite complete graph]
 
-    \begin{prop}
-    $R(s,t)$ is a well-defined function for all $s,t\in\Z^+$, and
+        Let $\Gamma$ be a countably infinite set. We define the 
+        \textit{infinite complete graph}, $K_\infty$, as the ordered pair 
+        $K_\infty:=(\Gamma,\Gamma^{(2)})$.\\
+        
+        Here, $\Gamma^{(2)}$ is the set of all the edges joining each vertex in 
+        $\Gamma$ to every other vertex.
     
-    \end{prop}
+    \end{definition}
+    \begin{theorem}[Ramsey]
+        For any r-colouring of $K_\infty$, say
+        $\chi :\Gamma^{(2)}\to\{1,\ldots,r\}$, there exists 
+        within it a countably infinite monochromatic complete subgraph. In other words, there 
+        exists $X \subset K_\infty$ such that $X$ is countably infinite, and $\chi|_{X^{(2)}}$ is the
+        constant function.
+    \end{theorem}
 
 \end{frame}
 
-\begin{frame}
-    \frametitle{Generalisation}
-    In fact, we can colour the edges of a graph with any finite number of colours, 
-    and Ramsey's theorem still holds. For $s_1,\ldots,s_r\in\Z^+$, we define the $R(s_1,\ldots,s_r)$, 
-    to be the least positive integer such that any 2-colouring of $K_n$ contains
-    as a subgraph a monochromatic $K_s$ or a monochromatic $K_t$, whenever 
-    $n\geq R(s,t)$.
+%An interesting corollary of this result is the following key theorem from 
+%analysis:
 
+\begin{frame}
+    \frametitle{Bolzano-Weierstrass Theorem}
+    \begin{theorem}[Bolzano-Weierstrass]
+        Let $(x_i)_{i\in \Z_+}$ be a bounded sequence of real numbers. Then it has
+        a convergent subsequence.
+    \end{theorem}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Bolzano-Weierstrass Theorem}
+    \begin{theorem}[Bolzano-Weierstrass]
+        Let $(x_i)_{i\in \Z_+}$ be a bounded sequence of real numbers. Then it has
+        a convergent subsequence.
+    \end{theorem}
+
+\begin{proof}
+
+    We define a 2-colouring of ${\Z^+}^{(2)}$ by calling $\{i,j\}$ \textit{red} 
+    if $x_i <x_j$, and \textit{blue} if $x_i\geq x_j$.
+
+    Then Ramsey's theorem gives us a countably infinite monochromatic 
+    set, which in this case is a monotone subsequence of $(x_i)$. And since it 
+    is bounded, by the monotone convergence theorem it must converge.
+
+\end{proof}
 \end{frame}
