@@ -4,15 +4,16 @@
   \frametitle{What is the Random Graph?}
 
   \begin{itemize}
-  \item<2-> Let $\str{G}=(V,E)$ be a (countable) graph.
+  \item<2-> Let $\str{G}=(G,E_G)$ be a (countable) graph.
     \begin{remark}[Extensibility Property]
-      $\str{G}$ has the extensibility property if for every $A, B \subset V$, distinct
-      non-empty, $\exists z \in V$ such that $z \in \adj A, z \notin \adj B$
+      $\str{G}$ has the extensibility property if for every finite $U, V
+      \subsetneq G$ disjoint, non-empty, $\exists z \in G$ s.t. $z \in
+      \adj U, z \notin \adj V$.
     \end{remark}
-  \item<3-> This is enough to identify the random graph up to isomorphism.
-  \item<4-> $G : \Pr((x,y)\in E)=\frac{1}{2},\forall x,y \in V$ implies that $G$
-    almost certainly has the extensibility property.
-  \item<5-> Call this structure the Random Graph $\rand$.
+  \item<3-> The EP determines a graph up to isomorphism.
+  \item<4-> If $\str{G}$ is s.t. $\forall x,y \in V,\Pr((x,y)\in
+    E)=\frac{1}{2}$, then $G$ almost certainly has the extensibility property.
+  \item<5-> Call this the random graph, $\rand$.
   \end{itemize}
 \end{frame}
 
@@ -20,10 +21,12 @@
   \frametitle{Properties of the Random Graph}
 
   \begin{itemize}
-  \item<2-> Homogeneity: $U, V\subset\rand$ isomorphic induced subgraphs.
-    Then there exists an automorphism of $\rand$ that extends the isomorphism.
-  \item<3-> Fraïssé limit: Every finite graph embeds into $\rand$
-  \item<4-> Ramsey type properties?
+  \item<2-> Homogeneity: If $\str{U}, \str{V}\subsetneq\rand$ finite, induced
+    subgraphs s.t. $U\overset{f}{\cong} V$.
+    Then, $\exists \tilde{f}\in\aut\rand$ that extends $f$.
+  \item<3-> $\rand$ is a Fraïssé limit: $\rand$ is the unique countable
+    structure s.t.\ every finite simple graph embeds into $\rand$.
+  \item<4-> Does $\gra$ have any Ramsey style properties?
   \end{itemize}
 \end{frame}
 
@@ -32,16 +35,29 @@
   \begin{definition}
     $\class{K}$ has the $\str{A}\in\class{K}$\textit{-Ramsey property} if
     $\forall\str{B}\in\class{K}, \forall t\in\Z^+$, there is
-    $\str{C}\in\class{K}$ s.t. every $t$-colouring of the $\str{A}$
-    substructures of $\str{C}$ has a monochromatic $\str{B}$
+    $\str{C}\in\class{K}$ s.t.\ every $t$-colouring of the $\str{A}$
+    induced subgraphs of $\str{C}$ has a monochromatic $\str{B}$.
 
     $\class{K}$ is a \textit{Ramsey class} if it has the $\str{A}$-Ramsey property
-    $\forall \str{A}\in\class{K}$
+    $\forall \str{A}\in\class{K}$.
   \end{definition}
   \begin{itemize}
-    \item<3-> 
     \item<2-> $\gra$ \textit{is not} a Ramsey class
-
+    \item<3-> $\ogra$ \textit{is} a Ramsey class
+    \item<4-> What does this imply about $\orand$?
   \end{itemize}
 \end{frame}
-% LocalWords:  Ramsey
+
+\begin{frame}
+  \frametitle{$\aut\orand$}
+
+  \begin{itemize}
+  \item<2-> $\aut\orand$ is \textit{extremely amenable}.
+  \item<3-> Let $X$ be compact Hausdorff topological space that $\aut\orand$ acts on.\\
+  $\exists x^*\in X$ s.t.\ $\forall g \in\aut\orand, g(x^*)=x^*$
+  \item<5-> Extremely amenable closed subgroups of $S_{\infty}$ correspond
+    to Ramsey classes (and vice versa).
+  \end{itemize}
+  
+\end{frame}
+% LocalWords:  Ramsey subgraph subgraphs Fraïssé
