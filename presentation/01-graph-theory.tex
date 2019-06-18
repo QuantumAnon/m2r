@@ -1,7 +1,7 @@
 \documentclass[./m2r-pres.tex]{subfile}
 
-%To motivate the key concepts of Ramsey thoery, we first consider the graph of 6 vertices, with 
-%edges joining each point to every other point. This called this the complete graph of order 6. We can consider colouring 
+%To motivate the key concepts here, we first consider the graph of 6 vertices, with 
+%edges joining each point to every other point. This called this the complete graph of order 6, K_6. We can consider colouring 
 %the edges either red or blue, shown here.
 
 \begin{frame}
@@ -35,7 +35,9 @@
                 \filldraw (-1,1.7321) circle (2pt);
             \end{tikzpicture}
         
-        \end{center}  
+        \end{center}
+        \caption{$K_6$}
+  
     \end{figure}
     
 \end{frame}
@@ -71,7 +73,9 @@
                 \filldraw (-1,1.7321) circle (2pt);
             \end{tikzpicture}
         
-        \end{center}  
+        \end{center}
+        \caption{$K_6$}
+  
     \end{figure}
     
 \end{frame}
@@ -107,7 +111,9 @@
                 \filldraw (-1,1.7321) circle (2pt);
             \end{tikzpicture}
         
-        \end{center}  
+        \end{center}
+        \caption{$K_6$}
+  
     \end{figure}
     
 \end{frame}
@@ -143,7 +149,9 @@
                 \filldraw (-1,1.7321) circle (2pt);
             \end{tikzpicture}
         
-        \end{center}  
+        \end{center}
+        \caption{$K_6$}
+  
     \end{figure}
     
 \end{frame}
@@ -179,7 +187,9 @@
                 \filldraw (-1,1.7321) circle (2pt);
             \end{tikzpicture}
         
-        \end{center}  
+        \end{center}
+        \caption{$K_6$}
+  
     \end{figure}
     
 \end{frame}
@@ -215,7 +225,9 @@
                 \filldraw (-1,1.7321) circle (2pt);
             \end{tikzpicture}
         
-        \end{center}  
+        \end{center}
+        \caption{$K_6$}
+  
     \end{figure}
     
 \end{frame}
@@ -251,7 +263,9 @@
                 \filldraw (-1,1.7321) circle (2pt);
             \end{tikzpicture}
         
-        \end{center}  
+        \end{center}
+        \caption{$K_6$}
+  
     \end{figure}
     
 \end{frame}
@@ -287,7 +301,8 @@
                 \filldraw (-1,1.7321) circle (2pt);
             \end{tikzpicture}
         
-        \end{center}  
+        \end{center}
+        \caption{$K_6$}
     \end{figure}
     
 \end{frame} 
@@ -324,7 +339,7 @@
             \end{tikzpicture}
         
         \end{center}  
-        \caption{2 red triangles within a graph of 6 vertices}     
+        \caption{2 red triangles within $K_6$}     
     \end{figure}
     
 \end{frame} 
@@ -450,9 +465,10 @@
     to be the least positive integer such that any $r$-colouring of $K_n$ contains 
     a complete monochromatic subgraph $K_{s_i}$ whenever 
     $n\geq R(s_1,\ldots,s_r)$, for some $i\in\{1,\ldots,r\}$.\\
+    %So here the R(s_1 to s_r) is the Ramsey number for r colours
 
     For example, $R(3,3,3)=17$.
-    %17 is the minimum order of a complete graph such that when we colour the 
+    %17 is the minimum order of a complete graph such that nomatter how we colour the 
     %edges with 3 colours, we always get a monochromatic triangle
     \end{definition}
 \end{frame}
@@ -469,7 +485,7 @@
     \end{definition}
     \begin{theorem}
         $R(s_1,\ldots,s_r)$ is a well-defined function for all $s_1,\ldots,s_r\in\Z^+.$
-        %i.e. for any set of positive integers s_i, for any r colouring of a complete 
+        %i.e. for any set of positive integers s_i and any r colouring of a complete 
         %graph of order at least R(s_1,\ldots,s_r), we can always find a monochromatic
         %complete subgraph of order s_i, for some i.
     \end{theorem}
@@ -512,6 +528,8 @@
         exists $X \subset K_\infty$ such that $X$ is countably infinite, and $\chi|_{X^{(2)}}$ is the
         constant function.
     \end{theorem}
+    %For any r colouring of the infinite graph, there exists a countably infinite 
+    %monochromatic complete subgraph
 
 \end{frame}
 
